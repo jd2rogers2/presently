@@ -1,0 +1,8 @@
+<div class="my-friends">
+  <h4>my friends</h4>
+  <ul>
+    <li ng-repeat="friend in userCtrl.user.friends">
+      <a href="#/users/{{friend.id}}/list" ng-bind="friend.username"></a>
+    </li>
+  </ul>
+</div>

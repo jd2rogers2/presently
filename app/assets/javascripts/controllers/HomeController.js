@@ -1,6 +1,13 @@
 (function(){
 
-  function HomeController(){}
+  'use strict';
+
+  function HomeController($scope){
+    var homeCtrl = this;
+    homeCtrl.currentUser = ''
+  }
+
+  HomeController.$inject = ['$scope']
 
   angular
     .module('app')

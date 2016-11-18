@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :lists, only: [:create, :show, :destroy, :index, :update]
   resources :items, only: [:create, :show, :destroy, :index, :update]
   resources :friendships, only: [:create, :show, :destroy, :index]
-  resources :users, only: [:show, :update]
+  resources :users, only: [:show, :update, :index]
 
   root to: 'application#index'
 end

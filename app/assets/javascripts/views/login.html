@@ -1,0 +1,19 @@
+<div ng-if="homeCtrl.currentUser">
+  current user page
+  <ul>
+    <li>nav bar</li>
+    <li>welcome username</li>
+    <li>shows your list (but to add/edit list, go to separate page)</li>
+    <li>list of their friends</li>
+    <li>list of items they have/will purchase</li>
+  </ul>
+</div>
+
+<div ng-if="!homeCtrl.currentUser">
+  sign in/up page
+  <p>
+  <a href="#/users/1/list">get user_1</a>
+  <!-- <button ng-click="$state.go(user)">get user_1</button> -->
+  <sub>replace with login</sub>
+  </p>
+</div>

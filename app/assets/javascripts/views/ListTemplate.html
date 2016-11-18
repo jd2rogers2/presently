@@ -1,0 +1,10 @@
+<table>
+  <tr>
+    <th>item name</th>
+    <th>external url</th>
+  </tr>
+  <tr ng-repeat="item in listDirCtrl.list.items">
+    <td><a href="#/items/{{item.id}}" ng-bind="item.name"></a></td>
+    <td ng-bind="item.url"></td>
+  </tr>
+</table>

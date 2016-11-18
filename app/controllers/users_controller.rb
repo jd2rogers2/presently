@@ -9,14 +9,15 @@ class UsersController < ApplicationController
   def show
     set_user
     respond_to do |format|
-      format.json {render json: {user: @user}}
+      # format.json {render json: @user}
+      format.json {render json: @user.to_json(include: [:friends, list: {include: :items}])}
     end
   end
 
   def index
     @users = User.all
     respond_to do |format|
-      format.json {render json: {users: @users}}
+      format.json {render json: @users}
     end
   end
 
