@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'bower-rails', '~> 0.11.0'
+# added version per research due to rails g bower_rails:initialize json error
+# gem 'bower-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'angular-rails-templates'
 gem 'devise'
 gem 'responders'

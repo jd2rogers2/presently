@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :items, only: [:create, :show, :destroy, :index, :update]
   resources :friendships, only: [:create, :show, :destroy, :index]
   resources :users, only: [:show, :update]
+
+  root to: 'application#index'
 end
