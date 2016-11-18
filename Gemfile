@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'bower-rails', '~> 0.11.0'
+gem 'angular-rails-templates'
 gem 'devise'
 gem 'responders'
 gem 'figaro'
