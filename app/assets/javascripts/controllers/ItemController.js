@@ -4,7 +4,6 @@
   function ItemController(item){
     var itemCtrl = this;
     itemCtrl.item = item;
-    // debugger;
   }
 
   // ItemController.$inject = ['$scope']

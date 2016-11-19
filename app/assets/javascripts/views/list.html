@@ -11,9 +11,11 @@
       <td><a href="#/items/{{item.id}}">view/edit</a></td>
     </tr>
     <tr>
-      <td><input value="item name"></input></td>
-      <td><input value="reference url"></input></td>
-      <td><input type="submit" value="add item" ng-click=""></input></td>
+      <form novalidate>
+        <td><input value="item name" ng-model="new_item_name"></input></td>
+        <td><input value="reference url" ng-model="new_item_url"></input></td>
+        <td><input type="submit" value="add item" ng-click="listCtrl.createItem(listCtrl.final_item)"></input></td>
+      </form>
     </tr>
   </table>
 </div>
