@@ -1,5 +1,4 @@
 (function(){
-
   'use strict';
 
   function ListController(list){
@@ -7,7 +6,7 @@
     listCtrl.list = list;
   }
 
-  ListController.$inject = ['$scope']
+  // ListController.$inject = ['$scope']
 
   angular
     .module('app')

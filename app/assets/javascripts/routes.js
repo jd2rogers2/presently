@@ -69,7 +69,6 @@
             resolve: {
               item: function(ItemService, $stateParams){
                 return ItemService.getItem($stateParams.id).then(function(data){
-                  // debugger;
                   return data.data;
                 })
               }
@@ -83,7 +82,6 @@
             controller: 'ListController as listCtrl',
             resolve: {
               list: function(ListService, $stateParams){
-                debugger;
                 return ListService.getList($stateParams.id).then(function(data){
                   return data.data;
                 })
