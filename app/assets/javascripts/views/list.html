@@ -1,4 +1,19 @@
 <div class="my-list">
   <h4><span ng-bind="userCtrl.user.username"></span>'s list</h4>
-  <list passvalue="userCtrl.user.list"></list>
+  <table>
+    <tr>
+      <th>item name</th>
+      <th>external url</th>
+    </tr>
+    <tr ng-repeat="item in userCtrl.user.list.items">
+      <td ng-bind="item.name"></td>
+      <td ng-bind="item.url"></td>
+      <td><a href="#/items/{{item.id}}">view/edit</a></td>
+    </tr>
+    <tr>
+      <td><input value="item name"></input></td>
+      <td><input value="reference url"></input></td>
+      <td><input type="submit" value="add item" ng-click=""></input></td>
+    </tr>
+  </table>
 </div>
