@@ -12,18 +12,6 @@
       })
 
       $stateProvider
-        .state('userList', {
-          url: '/users/:id/list',
-          templateUrl: 'views/list.html',
-          controller: 'UserController as userCtrl',
-          resolve: {
-            user: function(UserService, $stateParams){
-              return UserService.getUser($stateParams.id).then(function(data){
-                return data.data;
-              })
-            }
-          }
-        })
         .state('userFriends', {
           url: '/users/:id/friends',
           templateUrl: 'views/friends.html',
@@ -82,6 +70,21 @@
               item: function(ItemService, $stateParams){
                 return ItemService.getItem($stateParams.id).then(function(data){
                   // debugger;
+                  return data.data;
+                })
+              }
+            }
+          })
+
+        $stateProvider
+          .state('list', {
+            url: '/lists/:id',
+            templateUrl: 'views/list.html',
+            controller: 'ListController as listCtrl',
+            resolve: {
+              list: function(ListService, $stateParams){
+                debugger;
+                return ListService.getList($stateParams.id).then(function(data){
                   return data.data;
                 })
               }
