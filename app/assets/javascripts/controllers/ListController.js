@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function ListController(list, ItemService){
+  function ListController(list, ItemFactory){
     var listCtrl = this;
     listCtrl.list = list;
     listCtrl.new_item_name = '1';
@@ -15,12 +15,14 @@
     };
 
     listCtrl.createItem = function(input){
-      return ItemService.createItem(input);
+      debugger;
+      var new_item = ItemFactory.item = input;
+      return new_item.save();
     }
 
   }
 
-  // ListController.$inject = ['$scope']
+  ListController.$inject = ['ItemFactory']
 
   angular
     .module('app')
