@@ -17,10 +17,14 @@
           templateUrl: 'views/friends.html',
           controller: 'UserController as userCtrl',
           resolve: {
-            user: function(UserService, $stateParams){
-              return UserService.getUser($stateParams.id).then(function(data){
-                return data.data;
-              })
+            user: function(UserFactory, $stateParams){
+              UserFactory.get({id: $stateParams.id}, function(data){
+                debugger;
+                return data;
+              });
+              // return UserService.getUser($stateParams.id).then(function(data){
+              //   return data.data;
+              // })
             }
           }
         })

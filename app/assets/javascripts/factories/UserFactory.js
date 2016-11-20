@@ -2,7 +2,7 @@
   'use strict';
 
   function UserFactory($resource){
-    return $resource('/users/:id', {id: '@id'}, {
+    return $resource('/users/:id.json', {id: '@id'}, {
       "update": {method: "PUT"}
     });
   }

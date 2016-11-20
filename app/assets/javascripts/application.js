@@ -14,6 +14,7 @@
 //= require angular
 //= require angular-devise
 //= require angular-ui-router
+//= require angular-resource
 //= require bootstrap-sprockets
 //= require moment
 //= require angular-rails-templates
