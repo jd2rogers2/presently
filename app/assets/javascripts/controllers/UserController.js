@@ -4,7 +4,6 @@
   function UserController(user){
     var userCtrl = this;
     userCtrl.user = user;
-    debugger;
   }
 
   angular

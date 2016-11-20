@@ -18,13 +18,9 @@
           controller: 'UserController as userCtrl',
           resolve: {
             user: function(UserFactory, $stateParams){
-              UserFactory.get({id: $stateParams.id}, function(data){
-                debugger;
+              return UserFactory.get({id: $stateParams.id}, function(data){
                 return data;
               });
-              // return UserService.getUser($stateParams.id).then(function(data){
-              //   return data.data;
-              // })
             }
           }
         })
@@ -33,9 +29,9 @@
           templateUrl: 'views/purchases.html',
           controller: 'UserController as userCtrl',
           resolve: {
-            user: function(UserService, $stateParams){
-              return UserService.getUser($stateParams.id).then(function(data){
-                return data.data;
+            user: function(UserFactory, $stateParams){
+              return UserFactory.get({id: $stateParams.id}, function(data){
+                return data;
               })
             }
           }
@@ -45,9 +41,9 @@
           templateUrl: 'views/calendar.html',
           controller: 'UserController as userCtrl',
           resolve: {
-            user: function(UserService, $stateParams){
-              return UserService.getUser($stateParams.id).then(function(data){
-                return data.data;
+            user: function(UserFactory, $stateParams){
+              return UserFactory.get({id: $stateParams.id}, function(data){
+                return data;
               })
             }
           }
@@ -57,9 +53,9 @@
           templateUrl: 'views/profile.html',
           controller: 'UserController as userCtrl',
           resolve: {
-            user: function(UserService, $stateParams){
-              return UserService.getUser($stateParams.id).then(function(data){
-                return data.data;
+            user: function(UserFactory, $stateParams){
+              return UserFactory.get({id: $stateParams.id}, function(data){
+                return data;
               })
             }
           }
@@ -71,9 +67,9 @@
             templateUrl: 'views/item.html',
             controller: 'ItemController as itemCtrl',
             resolve: {
-              item: function(ItemService, $stateParams){
-                return ItemService.getItem($stateParams.id).then(function(data){
-                  return data.data;
+              item: function(ItemFactory, $stateParams){
+                return ItemFactory.get({id: $stateParams.id}, function(data){
+                  return data;
                 })
               }
             }
@@ -85,9 +81,10 @@
             templateUrl: 'views/list.html',
             controller: 'ListController as listCtrl',
             resolve: {
-              list: function(ListService, $stateParams){
-                return ListService.getList($stateParams.id).then(function(data){
-                  return data.data;
+              list: function(ListFactory, $stateParams){
+                return ListFactory.get({id: $stateParams.id}, function(data){
+                  debugger;
+                  return data;
                 })
               }
             }

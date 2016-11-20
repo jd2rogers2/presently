@@ -2,7 +2,7 @@
   'use strict';
 
   function ListFactory($resource){
-    return $resource('/lists/:id', {id: '@id'}, {
+    return $resource('/lists/:id.json', {id: '@id'}, {
       "update": {method: "PUT"}
     });
   }

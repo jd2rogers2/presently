@@ -14,6 +14,8 @@
       }
     };
 
+    debugger;
+
     listCtrl.createItem = function(input){
       debugger;
       var new_item = ItemFactory.item = input;
