@@ -7,7 +7,6 @@
     }
 
     this.createItem = function(new_item){
-      debugger;
       return $http({
         method: 'POST',
         url: '/items',

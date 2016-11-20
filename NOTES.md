@@ -4,9 +4,7 @@
 
 
 ----- errors -----
-
-" *= require bootstrap " not in application.scss
-error in browser "couldn't find file 'bootstrap' with type 'text/css'"
++ line 3 item_controller.rb - 404ish error from post request in item service without it
 
 
 
