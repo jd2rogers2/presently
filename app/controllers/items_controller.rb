@@ -4,28 +4,26 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
-    binding.pry
-    redirect_to list_path(@item.list_id)
+    @list = List.find_by(id: @item.list_id)
+    # redirect_to list_path(@item.list_id)
+    render json: @list
   end
 
   def update
     set_item
     @item.update(item_params)
-    redirect_to item_path(@item)
+    # redirect_to item_path(@item)
+    render json: @item
   end
 
   def show
     set_item
-    respond_to do |format|
-      format.json {render json: @item}
-    end
+    render json: @item
   end
 
   def index
     @items = Item.all
-    respond_to do |format|
-      format.json {render json: @items}
-    end
+    render json: @items
   end
 
   def destroy
