@@ -1,11 +1,9 @@
------ non seeded info -----
-username: user_me, email: user_me@email.com, pw: password
-username: user_gen, email: user_gen@email.com, pw: password
-
 ----- current -----
 + $state.go($state.current, {}, {reload: true}); 
   use for refreshing page upon item create on list.html
 + error messages upon bad login in LoginController.js
++ edit profile functionality
+  <button>edit profile</button>
 
 
 ----- errors -----
@@ -28,7 +26,6 @@ username: user_gen, email: user_gen@email.com, pw: password
 
 
 ----- differences with model app -----
-
 # in applicationController.rb
   def angular
     render 'layouts/application'

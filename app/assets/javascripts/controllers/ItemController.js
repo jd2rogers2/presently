@@ -1,9 +1,8 @@
 (function(){
   'use strict';
 
-  function ItemController(item){
+  function ItemController(){
     var itemCtrl = this;
-    itemCtrl.item = item;
   }
 
   // ItemController.$inject = ['$scope']

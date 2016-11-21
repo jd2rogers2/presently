@@ -1,11 +1,11 @@
 <div class="my-list">
-  <h4><span ng-bind="userCtrl.user.username"></span>'s list</h4>
+  <h4><span ng-bind="userCtrl.viewUser.username"></span>'s list</h4>
   <table>
     <tr>
       <th>item name</th>
       <th>external url</th>
     </tr>
-    <tr ng-repeat="item in userCtrl.user.list.items">
+    <tr ng-repeat="item in userCtrl.viewUser.list.items">
       <td ng-bind="item.name"></td>
       <td ng-bind="item.url"></td>
       <td><a href="#/items/{{item.id}}">view/edit</a></td>

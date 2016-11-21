@@ -1,9 +1,8 @@
 (function(){
   'use strict';
 
-  function ListController(list){
+  function ListController(){
     var listCtrl = this;
-    listCtrl.list = list;
   }
 
   // ListController.$inject = ['ItemFactory']

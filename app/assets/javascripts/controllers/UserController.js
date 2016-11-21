@@ -1,10 +1,10 @@
 (function(){
   'use strict';
 
-  function UserController($scope, user, ItemFactory){
+  function UserController($scope, Auth, $stateParams, UserFactory, ItemFactory){
     var userCtrl = this;
-    userCtrl.user = user;
-    debugger;
+    userCtrl.currentUser = Auth.currentUser();
+    userCtrl.viewUser = UserFactory.get({id: $stateParams.id});
 
     $scope.new_item = {
       items: {
@@ -20,7 +20,7 @@
     }
   }
 
-  UserController.$inject = ['$scope', 'ItemFactory']
+  UserController.$inject = ['$scope', 'Auth', '$stateParams', 'UserFactory', 'ItemFactory']
 
   angular
     .module('app')
