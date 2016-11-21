@@ -10,13 +10,12 @@
       <td ng-bind="item.url"></td>
       <td><a href="#/items/{{item.id}}">view/edit</a></td>
     </tr>
-    <tr>
-      <!-- novalidate as attr in below form? -->
-      <form>
-        <td><input value="item name" ng-model="new_item.items.name"></input></td>
-        <td><input value="reference url" ng-model="new_item.items.url"></input></td>
-        <td><input type="submit" value="add item" ng-click="userCtrl.createItem(new_item)"></input></td>
-      </form>
-    </tr>
   </table>
+
+  <!-- novalidate as attr in below form? -->
+  <form>
+    <input value="item name" ng-model="new_item.items.name"></input>
+    <input value="reference url" ng-model="new_item.items.url"></input>
+    <input type="submit" value="add item" ng-click="userCtrl.createItem(new_item)"></input>
+  </form>
 </div>
