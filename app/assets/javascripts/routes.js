@@ -60,6 +60,18 @@
             }
           }
         })
+        .state('userList', {
+            url: '/users/:id/list',
+            templateUrl: 'views/list.html',
+            controller: 'UserController as userCtrl',
+            resolve: {
+              user: function(UserFactory, $stateParams){
+                return UserFactory.get({id: $stateParams.id}, function(data){
+                  return data;
+                })
+              }
+            }
+          })
 
         $stateProvider
           .state('item', {
@@ -69,21 +81,6 @@
             resolve: {
               item: function(ItemFactory, $stateParams){
                 return ItemFactory.get({id: $stateParams.id}, function(data){
-                  return data;
-                })
-              }
-            }
-          })
-
-        $stateProvider
-          .state('list', {
-            url: '/lists/:id',
-            templateUrl: 'views/list.html',
-            controller: 'ListController as listCtrl',
-            resolve: {
-              list: function(ListFactory, $stateParams){
-                return ListFactory.get({id: $stateParams.id}, function(data){
-                  debugger;
                   return data;
                 })
               }
