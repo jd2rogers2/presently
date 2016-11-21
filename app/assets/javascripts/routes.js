@@ -8,7 +8,7 @@
       $stateProvider.state('login', {
         url: '/',
         templateUrl: 'views/login.html',
-        controller: 'HomeController as homeCtrl'
+        controller: 'LoginController as loginCtrl'
       })
 
       $stateProvider

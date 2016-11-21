@@ -1,7 +1,7 @@
 ----- current -----
-+ need to set up action to create list upon user creation
 + $state.go($state.current, {}, {reload: true}); 
   use for refreshing page upon item create on list.html
++ error messages upon bad login in LoginController.js
 
 
 ----- errors -----
