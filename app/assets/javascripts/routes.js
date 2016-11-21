@@ -61,17 +61,17 @@
           }
         })
         .state('userList', {
-            url: '/users/:id/list',
-            templateUrl: 'views/list.html',
-            controller: 'UserController as userCtrl',
-            resolve: {
-              user: function(UserFactory, $stateParams){
-                return UserFactory.get({id: $stateParams.id}, function(data){
-                  return data;
-                })
-              }
+          url: '/users/:id/list',
+          templateUrl: 'views/list.html',
+          controller: 'UserController as userCtrl',
+          resolve: {
+            user: function(UserFactory, $stateParams){
+              UserFactory.get({id: $stateParams.id}, function(data){
+                return data;
+              })
             }
-          })
+          }
+        })
 
         $stateProvider
           .state('item', {

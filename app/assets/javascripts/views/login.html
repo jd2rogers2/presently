@@ -1,19 +1,16 @@
-<div ng-if="homeCtrl.currentUser">
-  current user page
-  <ul>
-    <li>nav bar</li>
-    <li>welcome username</li>
-    <li>shows your list (but to add/edit list, go to separate page)</li>
-    <li>list of their friends</li>
-    <li>list of items they have/will purchase</li>
-  </ul>
-</div>
+<div id="sign-in">
+  <form ng-submit="login()">
+    <input type="text" name="username" placeholder="username" ng-model="user.username" /><br>
+    <input type="password" name="password" placeholder="password" ng-model="user.password" /><br>
+    <input type="submit" value="log in">
+  </form>
+</div><br>
 
-<div ng-if="!homeCtrl.currentUser">
-  sign in/up page
-  <p>
-  <a href="#/users/1/list">get user_1</a>
-  <!-- <button ng-click="$state.go(user)">get user_1</button> -->
-  <sub>replace with login</sub>
-  </p>
+<div id="sign-up">
+  <form ng-submit="register()">
+    <input type="text" name="username" placeholder="username" ng-model="new_user.username" /><br>
+    <input type="email" name="email" placeholder="email" ng-model="new_user.email" /><br>
+    <input type="password" name="password" placeholder="password" ng-model="new_user.password" /><br>
+    <input type="submit" value="register">
+  </form>
 </div>
