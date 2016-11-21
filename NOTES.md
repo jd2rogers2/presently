@@ -1,3 +1,7 @@
+----- non seeded info -----
+username: user_me, email: user_me@email.com, pw: password
+username: user_gen, email: user_gen@email.com, pw: password
+
 ----- current -----
 + $state.go($state.current, {}, {reload: true}); 
   use for refreshing page upon item create on list.html
@@ -15,10 +19,12 @@
 + user can upload their picture
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
 + google calendar
++ oAuth
 
 
 ----- questions -----
 + line 6 app controller.rb, skip needed/wanted?
++ .db file gone
 
 
 ----- differences with model app -----

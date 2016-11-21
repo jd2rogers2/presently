@@ -4,6 +4,7 @@
   function UserController($scope, user, ItemFactory){
     var userCtrl = this;
     userCtrl.user = user;
+    debugger;
 
     $scope.new_item = {
       items: {

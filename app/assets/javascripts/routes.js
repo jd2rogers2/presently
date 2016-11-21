@@ -5,22 +5,29 @@
   angular
     .module('app')
     .config(function($stateProvider, $urlRouterProvider){
-      $stateProvider.state('login', {
-        url: '/',
-        templateUrl: 'views/login.html',
-        controller: 'LoginController as loginCtrl'
-      })
+      $stateProvider
+        .state('login', {
+          url: '/',
+          templateUrl: 'views/login.html',
+          controller: 'LoginController as loginCtrl',
+          onEnter: function($state, Auth){
+            if (Auth._currentUser){
+              Auth.currentUser().then(function(data){
+                debugger;
+                $state.go('userList', {id: data.id})
+              })
+            }
+          }
+        })
 
       $stateProvider
         .state('userFriends', {
           url: '/users/:id/friends',
           templateUrl: 'views/friends.html',
           controller: 'UserController as userCtrl',
-          resolve: {
-            user: function(UserFactory, $stateParams){
-              return UserFactory.get({id: $stateParams.id}, function(data){
-                return data;
-              });
+          onEnter: function($state, Auth){
+            if (!Auth._currentUser){
+              $state.go('login');
             }
           }
         })
@@ -28,11 +35,9 @@
           url: '/users/:id/purchases',
           templateUrl: 'views/purchases.html',
           controller: 'UserController as userCtrl',
-          resolve: {
-            user: function(UserFactory, $stateParams){
-              return UserFactory.get({id: $stateParams.id}, function(data){
-                return data;
-              })
+          onEnter: function($state, Auth){
+            if (!Auth._currentUser){
+              $state.go('login')
             }
           }
         })
@@ -40,11 +45,9 @@
           url: '/users/:id/calendar',
           templateUrl: 'views/calendar.html',
           controller: 'UserController as userCtrl',
-          resolve: {
-            user: function(UserFactory, $stateParams){
-              return UserFactory.get({id: $stateParams.id}, function(data){
-                return data;
-              })
+          onEnter: function($state, Auth){
+            if (!Auth._currentUser){
+              $state.go('login')
             }
           }
         })
@@ -52,11 +55,9 @@
           url: '/users/:id/profile',
           templateUrl: 'views/profile.html',
           controller: 'UserController as userCtrl',
-          resolve: {
-            user: function(UserFactory, $stateParams){
-              return UserFactory.get({id: $stateParams.id}, function(data){
-                return data;
-              })
+          onEnter: function($state, Auth){
+            if (!Auth._currentUser){
+              $state.go('login')
             }
           }
         })
@@ -64,11 +65,9 @@
           url: '/users/:id/list',
           templateUrl: 'views/list.html',
           controller: 'UserController as userCtrl',
-          resolve: {
-            user: function(UserFactory, $stateParams){
-              UserFactory.get({id: $stateParams.id}, function(data){
-                return data;
-              })
+          onEnter: function($state, Auth){
+            if (!Auth._currentUser){
+              $state.go('login')
             }
           }
         })
@@ -78,11 +77,9 @@
             url: '/items/:id',
             templateUrl: 'views/item.html',
             controller: 'ItemController as itemCtrl',
-            resolve: {
-              item: function(ItemFactory, $stateParams){
-                return ItemFactory.get({id: $stateParams.id}, function(data){
-                  return data;
-                })
+            onEnter: function($state, Auth){
+              if (!Auth._currentUser){
+                $state.go('login')
               }
             }
           })

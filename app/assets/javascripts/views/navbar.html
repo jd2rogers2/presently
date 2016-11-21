@@ -1,11 +1,11 @@
 <div ng-controller="NavbarController as navCtrl">
   <ul style="list-style-type: none;">
     <li>change these links to have current user's id or not to work</li>
-    <li><a href="#/users/1/profile">profile</a></li>
-    <li><a href="#/users/1/list">list</a></li>
-    <li><a href="#/users/1/friends">friends</a></li>
-    <li><a href="#/users/1/purchases">purchases</a></li>
-    <li><a href="#/users/1/calendar">calendar</a></li>
+    <li><a ui-sref="userProfile({id: 1})">profile</a></li>
+    <li><a ui-sref="userList({id: 1})">list</a></li>
+    <li><a ui-sref="userFriends({id: 1})">friends</a></li>
+    <li><a ui-sref="userPurchases({id: 1})">purchases</a></li>
+    <li><a ui-sref="userCalendar({id: 1})">calendar</a></li>
     <li><a href="#" ng-click="logout()">log out</a></li>
   </ul>
 </div>
