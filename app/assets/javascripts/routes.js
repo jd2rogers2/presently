@@ -73,9 +73,19 @@
         })
 
         $stateProvider
-          .state('item', {
+          .state('itemShow', {
             url: '/items/:id',
-            templateUrl: 'views/item.html',
+            templateUrl: 'views/items/show.html',
+            controller: 'ItemController as itemCtrl',
+            onEnter: function($state, Auth){
+              if (!Auth._currentUser){
+                $state.go('login')
+              }
+            }
+          })
+          .state('itemEdit', {
+            url: '/items/:id/edit',
+            templateUrl: 'views/items/edit.html',
             controller: 'ItemController as itemCtrl',
             onEnter: function($state, Auth){
               if (!Auth._currentUser){

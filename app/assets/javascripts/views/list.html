@@ -1,11 +1,11 @@
 <div class="my-list">
-  <h4><span ng-bind="userCtrl.viewUser.username"></span>'s list</h4>
+  <h4><span ng-bind="viewUser.username"></span>'s list</h4>
   <table>
     <tr>
       <th>item name</th>
       <th>external url</th>
     </tr>
-    <tr ng-repeat="item in userCtrl.viewUser.list.items">
+    <tr ng-repeat="item in viewUser.list.items">
       <td ng-bind="item.name"></td>
       <td ng-bind="item.url"></td>
       <td><a href="#/items/{{item.id}}">view/edit</a></td>
@@ -16,6 +16,6 @@
   <form>
     <input value="item name" ng-model="new_item.items.name"></input>
     <input value="reference url" ng-model="new_item.items.url"></input>
-    <input type="submit" value="add item" ng-click="userCtrl.createItem(new_item)"></input>
+    <input type="submit" value="add item" ng-click="createItem(new_item)"></input>
   </form>
 </div>

@@ -1,6 +1,4 @@
 ----- current -----
-+ $state.go($state.current, {}, {reload: true}); 
-  use for refreshing page upon item create on list.html
 + error messages upon bad login in LoginController.js
 + edit profile functionality
   <button>edit profile</button>
@@ -12,6 +10,9 @@
 
 
 ----- potential features -----
++ add notes or description attr to items
++ persist session in front end upon refresh
+  http://stackoverflow.com/questions/19756677/angular-reuse-session-after-refresh-browser-closed
 + check out ngMessages
 + change all routes with :id to :username or :name?
 + user can upload their picture

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :friends, through: :friendships, foreign_key: 'friend_id'
   has_one :list
-  has_many :purchases, class_name: 'Item'
+  has_many :purchases, class_name: 'Item', foreign_key: 'purchaser_id'
   after_create :add_list
 
   def add_list
