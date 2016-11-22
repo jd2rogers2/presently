@@ -9,9 +9,14 @@
     $scope.viewUser = UserFactory.get({id: $stateParams.id});
 
     $scope.createItem = function(input){
-      input.items.list_id = $scope.currentUser.list.id
-      ItemFactory.save(input)
-      $state.go($state.current, {}, {reload: true})
+      input.items.list_id = $scope.currentUser.list.id;
+      ItemFactory.save(input);
+      $state.go($state.current, {}, {reload: true});
+    }
+
+    $scope.deleteItem = function(item){
+      ItemFactory.delete(item);
+      $state.go($state.current, {}, {reload: true});
     }
   }
 

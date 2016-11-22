@@ -10,6 +10,7 @@
 
 
 ----- potential features -----
++ users have to accept friend request. Friendships table has status column
 + add notes or description attr to items
 + persist session in front end upon refresh
   http://stackoverflow.com/questions/19756677/angular-reuse-session-after-refresh-browser-closed

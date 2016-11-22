@@ -30,9 +30,9 @@ module Api
 
       def destroy
         set_item
+        @list = List.find_by(id: @item.list_id)
         @item.destroy
-        @items = Item.all
-        render json: @items
+        render json: @list
       end
 
       private
