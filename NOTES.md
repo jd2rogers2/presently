@@ -5,7 +5,7 @@
 
 
 ----- errors -----
-+ .run in app.js doing anything?
++ logout on navbar.html only working on second click??
 
 
 
@@ -24,6 +24,7 @@
 ----- questions -----
 + line 6 app controller.rb, skip needed/wanted?
 + .db file gone
++ .run in app.js, how does this work?
 
 
 ----- differences with model app -----
