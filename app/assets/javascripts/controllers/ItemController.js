@@ -3,8 +3,10 @@
 
   function ItemController($scope, $stateParams, ItemFactory){
     var itemCtrl = this;
-    itemCtrl.item = ItemFactory.get({id: $stateParams.id});
-    itemCtrl.update = ItemFactory.save(itemCtrl.item);
+    $scope.item = ItemFactory.get({id: $stateParams.id});
+    $scope.update = function(){
+      ItemFactory.update($scope.item);
+    }
   }
 
   ItemController.$inject = ['$scope', '$stateParams', 'ItemFactory']

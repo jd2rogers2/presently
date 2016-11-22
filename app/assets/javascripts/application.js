@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require angular
+//= require angular-cookies
 //= require angular-devise
 //= require angular-ui-router
 //= require angular-resource

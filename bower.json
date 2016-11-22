@@ -4,6 +4,7 @@
     "angular": "v1.5.8",
     "angular-ui-router": "latest",
     "angular-resource": "v1.5.3",
+    "angular-cookies": "latest",
     "angular-devise": "latest",
     "moment": "latest",
     "bootstrap": "latest"

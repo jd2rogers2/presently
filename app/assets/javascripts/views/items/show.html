@@ -1,9 +1,9 @@
 <ul>
   <li>item pic</li>
-  <li ng-bind="itemCtrl.item.name"></li>
-  <li ng-bind="itemCtrl.item.url"></li>
+  <li ng-bind="item.name"></li>
+  <li ng-bind="item.url"></li>
   <li>only show below if currentUser is not list owner</li>
-  <li ng-bind="itemCtrl.item.purchaser || 'none'"></li>
+  <li ng-bind="item.purchaser || 'none'"></li>
 </ul>
 <br>
-<a href="#" ui-sref="itemEdit({id: itemCtrl.item.id})">edit item</a>
+<a href="#" ui-sref="itemEdit({id: item.id})">edit item</a>
