@@ -10,6 +10,7 @@
 
 
 ----- potential features -----
++ delete item? what if it's already purchased, not deleting can also stink for user
 + users have to accept friend request. Friendships table has status column
 + add notes or description attr to items
 + persist session in front end upon refresh

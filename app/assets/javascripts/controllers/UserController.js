@@ -20,7 +20,6 @@
     }
 
     $scope.userEqualsOwner = function(){
-      // debugger;
       if ($scope.currentUser.id == $stateParams.id) {
         return true;
       } else {
@@ -28,7 +27,12 @@
       }
     }
 
-    $scope.purchase = function(){}
+    $scope.purchase = function(item){
+      item.purchaser_id = $scope.currentUser.id;
+      var temp = {items: item, id: item.id}
+      ItemFactory.update(temp);
+      $state.go($state.current, {}, {reload: true})
+    }
   }
 
   UserController.$inject = ['$scope', 'Auth', '$stateParams', '$state', 'UserFactory', 'ItemFactory']

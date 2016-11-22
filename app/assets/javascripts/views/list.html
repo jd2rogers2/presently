@@ -4,13 +4,17 @@
     <tr>
       <th>item name</th>
       <th>external url</th>
+      <th>purchaser</th>
     </tr>
     <tr ng-repeat="item in viewUser.list.items">
       <td ng-bind="item.name"></td>
       <td ng-bind="item.url"></td>
+      <td ng-if="!userEqualsOwner()">
+        <span ng-if="item.purchaser" ng-bind="item.purchaser.username"></span>
+        <span ng-if="!item.purchaser">none - <a href="" ng-click="purchase(item)">purchase</a></span>
+      </td>
       <td ng-if="userEqualsOwner()"><a ui-sref="itemEdit({id: item.id})">view/edit</a></td>
       <td ng-if="userEqualsOwner()"><a href="" ng-click="deleteItem(item)">delete</a></td>
-      <td ng-if="!userEqualsOwner()"><a href="" ng-click="purchase()">purchase</a></td>
     </tr>
   </table>
 
