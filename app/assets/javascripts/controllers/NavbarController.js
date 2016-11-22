@@ -9,15 +9,15 @@
       });
     }
 
-    $scope.on('devise:new-registration', function(event, data){
-      $scope.setUser;
+    $scope.$on('devise:new-registration', function(event, data){
+      $scope.currentUser = data;
     });
 
-    $scope.on('devise:login', function(event, data){
-      $scope.setUser;
+    $scope.$on('devise:login', function(event, data){
+      $scope.currentUser = data;
     });
 
-    $scope.on('devise:logout', function(event, data){
+    $scope.$on('devise:logout', function(event, data){
       $scope.currentUser = {};
     });
 

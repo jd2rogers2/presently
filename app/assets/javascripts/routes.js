@@ -13,7 +13,6 @@
           onEnter: function($state, Auth){
             if (Auth._currentUser){
               Auth.currentUser().then(function(data){
-                debugger;
                 $state.go('userList', {id: data.id})
               })
             }
