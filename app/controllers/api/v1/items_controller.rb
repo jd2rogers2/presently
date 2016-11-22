@@ -20,7 +20,7 @@ module Api
 
       def show
         set_item
-        render json: @item
+        render json: @item.to_json(include: [list: {include: :user}])
       end
 
       def index

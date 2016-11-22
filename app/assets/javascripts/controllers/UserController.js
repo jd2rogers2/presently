@@ -18,6 +18,17 @@
       ItemFactory.delete(item);
       $state.go($state.current, {}, {reload: true});
     }
+
+    $scope.userEqualsOwner = function(){
+      // debugger;
+      if ($scope.currentUser.id == $stateParams.id) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    $scope.purchase = function(){}
   }
 
   UserController.$inject = ['$scope', 'Auth', '$stateParams', '$state', 'UserFactory', 'ItemFactory']

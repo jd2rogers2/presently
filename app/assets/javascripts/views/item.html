@@ -1,7 +1,10 @@
+item pic <br>
+item pic <br>
 <form ng-submit="update()">
-  item pic <br>
-  <input type="text" ng-model="item.items.name" placeholder="{{item.items.name}}" /><br>
-  <input type="text" ng-model="item.items.url" placeholder="{{item.items.url}}" /><br>
-  <input type="submit" value="update" />
+  <input type="text" ng-model="item.name" placeholder="{{item.name}}" /><br>
+  <input type="text" ng-model="item.url" placeholder="{{item.url}}" /><br>
+  only show below if currentUser is not list owner <br>
+  <input type="text" ng-model="item.purchaser" placeholder="{{item.purchaser}}" /><br>
+  <input type="submit" value="edit item" />
 </form>
 <br>

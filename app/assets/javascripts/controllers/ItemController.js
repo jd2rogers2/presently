@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function ItemController($scope, $state, $stateParams, ItemFactory){
+  function ItemController($scope, $state, $stateParams, ItemFactory, Auth){
     var itemCtrl = this;
     $scope.item = {items: ItemFactory.get({id: $stateParams.id}), 
                       id: $stateParams.id
@@ -12,7 +12,7 @@
     }
   }
 
-  ItemController.$inject = ['$scope', '$state', '$stateParams', 'ItemFactory']
+  ItemController.$inject = ['$scope', '$state', '$stateParams', 'ItemFactory', 'Auth']
 
   angular
     .module('app')

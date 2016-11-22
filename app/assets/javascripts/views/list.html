@@ -8,13 +8,14 @@
     <tr ng-repeat="item in viewUser.list.items">
       <td ng-bind="item.name"></td>
       <td ng-bind="item.url"></td>
-      <td><a ui-sref="itemEdit({id: item.id})">view/edit</a></td>
-      <td><a href="" ng-click="deleteItem(item)">delete</a></td>
+      <td ng-if="userEqualsOwner()"><a ui-sref="itemEdit({id: item.id})">view/edit</a></td>
+      <td ng-if="userEqualsOwner()"><a href="" ng-click="deleteItem(item)">delete</a></td>
+      <td ng-if="!userEqualsOwner()"><a href="" ng-click="purchase()">purchase</a></td>
     </tr>
   </table>
 
   <!-- novalidate as attr in below form? -->
-  <form ng-submit="createItem(new_item)">
+  <form ng-if="userEqualsOwner()" ng-submit="createItem(new_item)">
     <input value="item name" ng-model="new_item.items.name"></input>
     <input value="reference url" ng-model="new_item.items.url"></input>
     <input type="submit" value="add item"></input>
