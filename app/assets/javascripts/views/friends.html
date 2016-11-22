@@ -1,7 +1,7 @@
 <div class="my-friends">
   <h4>my friends</h4>
   <ul>
-    <li ng-repeat="friend in userCtrl.viewUser.friends">
+    <li ng-repeat="friend in viewUser.friends">
       <!-- <a ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a> -->
       <a href="#/users/{{friend.id}}/list" ng-bind="friend.username"></a>
     </li>
