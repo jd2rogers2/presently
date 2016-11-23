@@ -20,7 +20,7 @@
     }
 
     $scope.userEqualsOwner = function(){
-      if ($scope.currentUser.id == $scope.list.user.id) {
+      if ($scope.currentUser.id == $scope.list.user_id) {
         return true;
       } else {
         return false;

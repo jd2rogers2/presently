@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function frienshipController($scope, $state, $stateParams, Auth, friendshipFactory){
+  function friendshipController($scope, $state, $stateParams, Auth, friendshipFactory, userFactory, $filter){
     var friendshipCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
@@ -14,15 +14,19 @@
       $scope.searchedUsers = $filter('byUsernameFilter')($scope.allUsers, $scope.searchCriteria);
     }
 
+    $scope.alreadyFriend = function(user){
+      return $filter('alreadyFriendFilter')($scope.currentUser.friends, user)
+    }
+
     // $scope.requestFriend = function(){
     //   friendshipFactory.put({user_id: , friend_id: })
     // }
   }
 
-  frienshipController.$inject = ['$scope', '$state', '$stateParams', 'Auth', 'friendshipFactory']
+  friendshipController.$inject = ['$scope', '$state', '$stateParams', 'Auth', 'friendshipFactory', 'userFactory', '$filter']
 
   angular
     .module('app')
-    .controller('frienshipController', frienshipController)
+    .controller('friendshipController', friendshipController)
 
 }())

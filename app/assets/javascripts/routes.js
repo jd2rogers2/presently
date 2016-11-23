@@ -40,9 +40,9 @@
             }
           }
         })
-        .state('editProfile', {
+        .state('userProfile', {
           url: '/users/:id',
-          templateUrl: 'views/editProfile.html',
+          templateUrl: 'views/profile.html',
           controller: 'userController as userCtrl',
           onEnter: function($state, Auth){
             if (!Auth._currentUser){
