@@ -15,7 +15,7 @@
     }
 
     $scope.alreadyFriend = function(user){
-      return $filter('alreadyFriendFilter')($scope.currentUser.friends, user)
+      return $filter('alreadyFriendFilter')($scope.currentUser, user)
     }
 
     $scope.requestFriend = function(user){

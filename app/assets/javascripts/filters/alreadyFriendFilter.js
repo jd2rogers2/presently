@@ -2,10 +2,14 @@
   'use strict';
 
   function alreadyFriendFilter(){
-    return function(array, user){
+    return function(currentUser, user){
+      var array = currentUser.friends
       var final_answer = false;
       array.forEach(function(friend){
         if (friend.id == user.id) {
+          final_answer = true;
+        } else if (friend.id == currentUser.id) {
+          // cannot friend yourself
           final_answer = true;
         }
       })
