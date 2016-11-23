@@ -1,4 +1,5 @@
 ----- current -----
++ profile page to show your friends with add button for other users
 + error messages upon bad login in LoginController.js
 + edit profile functionality
   <button>edit profile</button>
@@ -13,6 +14,7 @@
 
 
 ----- potential features -----
++ items have rank (what you want most)
 + delete item? what if it's already purchased, not deleting can also stink for user
 + check out ngMessages
 + user can upload their picture

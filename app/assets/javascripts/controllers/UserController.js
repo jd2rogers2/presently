@@ -1,12 +1,14 @@
 (function(){
   'use strict';
 
-  function UserController($scope, Auth, $stateParams, $state, UserFactory, ItemFactory){
+  function UserController($scope, Auth, $stateParams, $state, UserFactory, ItemFactory, $filter){
     var userCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
     });
     $scope.viewUser = UserFactory.get({id: $stateParams.id});
+    $scope.allUsers = UserFactory.query();
+    $scope.searchedUsers = [];
 
     $scope.createItem = function(input){
       input.items.list_id = $scope.currentUser.list.id;
@@ -33,9 +35,14 @@
       ItemFactory.update(temp);
       $state.go($state.current, {}, {reload: true})
     }
+
+    $scope.userSearch = function(){
+      $scope.searchedUsers = $filter('filter')($scope.allUsers, $scope.searchCriteria)
+    }
+
   }
 
-  UserController.$inject = ['$scope', 'Auth', '$stateParams', '$state', 'UserFactory', 'ItemFactory']
+  UserController.$inject = ['$scope', 'Auth', '$stateParams', '$state', 'UserFactory', 'ItemFactory', '$filter']
 
   angular
     .module('app')

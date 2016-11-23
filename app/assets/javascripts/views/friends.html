@@ -2,11 +2,20 @@
   <h4>my friends</h4>
   <ul>
     <li ng-repeat="friend in viewUser.friends">
-      <!-- <a ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a> -->
-      <a href="#/users/{{friend.id}}/list" ng-bind="friend.username"></a>
+      <a href="" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a>
     </li>
   </ul>
+</div>
+<div class="search-friends">
   <h4>search users</h4>
-  <input type="text" value="search">
-  <input type="submit">
+  <form ng-submit="userSearch()">
+    <input type="text" placeholder="search" ng-model="searchCriteria">
+    <input type="submit">
+  </form>
+  <table>
+    <tr ng-repeat="user in searchedUsers">
+      <td><span ng-bind="user.username"></span></td>
+      <td><a ng-if="!currentUser.friends.includes(user)" href="">send friend request</a></td>
+    </tr>
+  </table>
 </div>
