@@ -18,9 +18,10 @@
       return $filter('alreadyFriendFilter')($scope.currentUser.friends, user)
     }
 
-    // $scope.requestFriend = function(){
-    //   friendshipFactory.put({user_id: , friend_id: })
-    // }
+    $scope.requestFriend = function(user){
+      friendshipFactory.save({friendships: {user_id: $scope.currentUser.id, friend_id: user.id}});
+      $state.go($state.current, {}, {reload: true});
+    }
   }
 
   friendshipController.$inject = ['$scope', '$state', '$stateParams', 'Auth', 'friendshipFactory', 'userFactory', '$filter']

@@ -1,7 +1,6 @@
 <div ng-controller="navbarController as navCtrl">
   <h3>welcome <span ng-bind="currentUser.username"></span></h3>
   <ul style="list-style-type: none;">
-    <li>change these links to have current user's id or not to work</li>
     <li><a ui-sref="userProfile({id: currentUser.id})">profile</a></li>
     <li><a ui-sref="list({id: currentUser.id})">list</a></li>
     <li><a ui-sref="userFriends({id: currentUser.id})">friends</a></li>

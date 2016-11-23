@@ -1,9 +1,9 @@
 <div class="my-friends">
   <h4>my friends</h4>
   <ul>
-    <li><a href="" ui-sref="list({id: 4})">temp button to user_4</a></li>
+    <li>change this to ui-sref="list({id: friend.list.id})" once currentUser issue figured out</li>
     <li ng-repeat="friend in currentUser.friends">
-      <a href="" ui-sref="list({id: friend.list.id})" ng-bind="friend.username"></a>
+      <a href="" ui-sref="list({id: friend.id})" ng-bind="friend.username"></a>
     </li>
   </ul>
 </div>
@@ -16,9 +16,9 @@
   </form>
   <table>
     <tr ng-repeat="user in searchedUsers">
-      <td>user profile pic </td>
-      <td><span ng-bind="user.username"> </span></td>
-      <td ng-if="!alreadyFriend(user)"><a href="">send friend request</a></td>
+      <td>user profile pic -- </td>
+      <td><span ng-bind="user.username"></span></td>
+      <td ng-if="!alreadyFriend(user)"><button ng-click="requestFriend(user)"> send friend request</button></td>
     </tr>
   </table>
 </div>

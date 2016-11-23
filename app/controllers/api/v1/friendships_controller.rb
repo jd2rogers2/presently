@@ -5,7 +5,8 @@ module Api
       
       def create
         @friendship = Friendship.create(friendship_params)
-        render json: @friendship
+        @user = User.find_by(id: @friendship.user_id)
+        render json: @user
       end
 
       def show

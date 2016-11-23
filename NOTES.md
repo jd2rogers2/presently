@@ -9,6 +9,7 @@
 + users on destroy deletes list and items
 + add notes and price attrs to items
 + users have to accept friend request. Friendships table has status column
++ may need to load @list in friendships#create if added from a different user's profile, or just don't allow that?
 
 
 ----- errors -----
@@ -31,6 +32,7 @@
 + .db file gone
 + .run in app.js, how does this work?
 + why activate vs resolve?
+  refactor after graduation to use resolves?
 
 
 ----- differences with model app -----
