@@ -20,16 +20,6 @@
         })
 
       $stateProvider
-        .state('userFriends', {
-          url: '/users/:id/friends',
-          templateUrl: 'views/friends.html',
-          controller: 'userController as userCtrl',
-          onEnter: function($state, Auth){
-            if (!Auth._currentUser){
-              $state.go('login');
-            }
-          }
-        })
         .state('userPurchases', {
           url: '/users/:id/purchases',
           templateUrl: 'views/purchases.html',
@@ -50,9 +40,9 @@
             }
           }
         })
-        .state('userProfile', {
-          url: '/users/:id/profile',
-          templateUrl: 'views/profile.html',
+        .state('editProfile', {
+          url: '/users/:id',
+          templateUrl: 'views/editProfile.html',
           controller: 'userController as userCtrl',
           onEnter: function($state, Auth){
             if (!Auth._currentUser){
@@ -60,10 +50,24 @@
             }
           }
         })
-        .state('userList', {
-          url: '/users/:id/list',
+
+      $stateProvider
+        .state('userFriends', {
+          url: '/users/:id/friends',
+          templateUrl: 'views/friends.html',
+          controller: 'friendshipController as friendshipCtrl',
+          onEnter: function($state, Auth){
+            if (!Auth._currentUser){
+              $state.go('login');
+            }
+          }
+        })
+
+      $stateProvider
+        .state('list', {
+          url: '/list/:id',
           templateUrl: 'views/list.html',
-          controller: 'userController as userCtrl',
+          controller: 'listController as listCtrl',
           onEnter: function($state, Auth){
             if (!Auth._currentUser){
               $state.go('login')

@@ -11,5 +11,5 @@
 
   angular
     .module('app')
-    .service('listFactory', listFactory)
+    .factory('listFactory', listFactory)
 }())

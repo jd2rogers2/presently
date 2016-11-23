@@ -1,5 +1,8 @@
 ----- current -----
-+ profile page to show your friends with add button for other users
++ add button friend for other users
++ purchases page
++ calendar page
+
 + error messages upon bad login in LoginController.js
 + edit profile functionality
   <button>edit profile</button>
@@ -10,7 +13,7 @@
 
 ----- errors -----
 + logout on navbar.html only working on second click??
-
++ adding/editing items works but only shows upon refresh
 
 
 ----- potential features -----

@@ -1,11 +1,12 @@
 <div class="my-friends">
   <h4>my friends</h4>
   <ul>
-    <li ng-repeat="friend in viewUser.friends">
+    <li ng-repeat="friend in currentUser.friends">
       <a href="" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a>
     </li>
   </ul>
 </div>
+
 <div class="search-friends">
   <h4>search users</h4>
   <form ng-submit="userSearch()">

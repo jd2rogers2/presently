@@ -1,0 +1,16 @@
+<h4>this is profile</h4>
+<ul>
+  <li>user pic</li>
+  <li ng-bind="currentUser.email"></li>
+  <li ng-bind="currentUser.aboutme"></li>
+  <li ng-bind="currentUser.bday"></li>
+</ul>
+
+<div class="my-friends">
+  <h4>these are your friends</h4>
+  <ul>
+    <li ng-repeat="friend in currentUser.friends">
+      <a href="" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a>
+    </li>
+  </ul>
+</div>
