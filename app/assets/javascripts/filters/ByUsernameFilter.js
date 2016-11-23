@@ -1,17 +1,15 @@
 (function(){
   'use strict';
 
-  function ByUsernameFilter(){
+  function byUsernameFilter(){
     return function(array, searchCriteria){
       return array.filter(function(element){
-        debugger;
-        return element.username
-        // if it includes searchCriteria
+        return element.username.includes(searchCriteria);
       });
     }
   }
 
   angular
     .module('app')
-    .filter('ByUsernameFilter', ByUsernameFilter)
+    .filter('byUsernameFilter', byUsernameFilter);
 }())
