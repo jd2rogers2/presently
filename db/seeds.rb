@@ -16,7 +16,7 @@ end
 
 9.times do |i|
   string = 'item_' + (i + 1).to_s
-  Item.create(name: string, list_id: i, purchaser_id: i + 1, url: 'url', description: string + " description")
+  Item.create(name: string, list_id: i, purchaser_id: i + 1, url: 'url')
 end
 
 # This file should contain all the record creation needed to seed the database with its default values.

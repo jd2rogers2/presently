@@ -5,7 +5,8 @@ module Api
 
       def show
         set_user
-        render json: @user.to_json(include: [friends: {include: :list}, list: {include: {items: {include: :purchaser}}}])
+        render json: @user
+        # render json: @user.to_json(include: [purchases: {include: :purchaser}, friends: {include: :list}, list: {include: {items: {include: :purchaser}}}])
       end
 
       def index

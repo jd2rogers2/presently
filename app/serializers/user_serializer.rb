@@ -1,6 +1,9 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :username, :bday, :aboutme, :email
-  # has_many :purchases, serializer: ItemSerializer
-  has_one :list, serializer: ListSerializer
+  def list
+    {id: object.list.id, user: {id: object.list.user.id, username: object.list.user.username}}
+  end
+
+  attributes :id, :username, :bday, :aboutme, :email, :list
+  has_many :purchases, serializer: ItemSerializer
   has_many :friends, serializer: UserSerializer
 end
