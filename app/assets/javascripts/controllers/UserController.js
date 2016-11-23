@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function UserController($scope, Auth, $stateParams, $state, UserFactory, ItemFactory, $filter){
+  function UserController($scope, Auth, $stateParams, $state, UserFactory, ItemFactory, ByUsernameFilter){
     var userCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
@@ -37,12 +37,12 @@
     }
 
     $scope.userSearch = function(){
-      $scope.searchedUsers = $filter('filter')($scope.allUsers, $scope.searchCriteria)
+      $scope.searchedUsers = ByUsernameFilter($scope.allUsers, $scope.searchCriteria);
     }
 
   }
 
-  UserController.$inject = ['$scope', 'Auth', '$stateParams', '$state', 'UserFactory', 'ItemFactory', '$filter']
+  UserController.$inject = ['$scope', 'Auth', '$stateParams', '$state', 'UserFactory', 'ItemFactory', 'ByUsernameFilter']
 
   angular
     .module('app')
