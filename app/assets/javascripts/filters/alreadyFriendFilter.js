@@ -6,9 +6,9 @@
       var array = currentUser.friends
       var final_answer = false;
       array.forEach(function(friend){
-        if (friend.id == user.id) {
+        if (user.id == friend.id) {
           final_answer = true;
-        } else if (friend.id == currentUser.id) {
+        } else if (user.id == currentUser.id) {
           // cannot friend yourself
           final_answer = true;
         }
