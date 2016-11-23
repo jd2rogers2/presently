@@ -4,7 +4,7 @@
     <tr>
       <th>item name</th>
       <th>external url</th>
-      <th>purchaser</th>
+      <th ng-if="!userEqualsOwner()">purchaser</th>
     </tr>
     <tr ng-repeat="item in viewUser.list.items">
       <td ng-bind="item.name"></td>
