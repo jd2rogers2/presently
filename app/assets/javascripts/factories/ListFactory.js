@@ -1,15 +1,15 @@
 (function(){
   'use strict';
 
-  function ListFactory($resource){
+  function listFactory($resource){
     return $resource('/api/v1/lists/:id.json', {id: '@id'}, {
       "update": {method: "PUT"}
     });
   }
 
-  ListFactory.$inject = ['$resource']
+  listFactory.$inject = ['$resource']
 
   angular
     .module('app')
-    .service('ListFactory', ListFactory)
+    .service('listFactory', listFactory)
 }())

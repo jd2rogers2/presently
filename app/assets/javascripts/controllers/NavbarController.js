@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function NavbarController($scope, $state, Auth){
+  function navbarController($scope, $state, Auth){
 
     $scope.setUser = function(){
       Auth.currentUser().then(function(data){
@@ -27,9 +27,9 @@
     }
   }
 
-  NavbarController.$inject =['$scope', '$state', 'Auth']
+  navbarController.$inject =['$scope', '$state', 'Auth']
 
   angular
     .module('app')
-    .controller('NavbarController', NavbarController)
+    .controller('navbarController', navbarController)
 }())

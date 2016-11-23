@@ -1,14 +1,14 @@
 (function(){
   'use strict';
 
-  function ListController(){
+  function listController(){
     var listCtrl = this;
   }
 
-  // ListController.$inject = ['ItemFactory']
+  // listController.$inject = ['ItemFactory']
 
   angular
     .module('app')
-    .controller('ListController', ListController)
+    .controller('listController', listController)
 
 }())

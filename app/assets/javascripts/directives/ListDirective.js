@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function ListDirective(){
+  function listDirective(){
     return {
       templateUrl: 'views/ListTemplate.html',
       controller: function(){
@@ -16,5 +16,5 @@
 
   angular
     .module('app')
-    .directive('list', ListDirective)
+    .directive('list', listDirective)
 }())

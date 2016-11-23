@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function LoginController($scope, $state, Auth){
+  function loginController($scope, $state, Auth){
     var loginCtrl = this;
 
     $scope.login = function(){
@@ -22,10 +22,10 @@
     }
   }
 
-  LoginController.$inject = ['$scope', '$state', 'Auth']
+  loginController.$inject = ['$scope', '$state', 'Auth']
 
   angular
     .module('app')
-    .controller('LoginController', LoginController)
+    .controller('loginController', loginController)
 
 }())
