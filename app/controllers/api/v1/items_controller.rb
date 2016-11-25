@@ -11,6 +11,7 @@ module Api
       end
 
       def update
+        binding.pry
         set_item
         @item.update(item_params)
         @list = List.find_by(id: @item.list_id)
