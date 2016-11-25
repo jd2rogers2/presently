@@ -11,6 +11,7 @@
       <td ng-bind="item.url"></td>
       <td ng-if="!userEqualsOwner()">
         <span ng-if="item.purchaser" ng-bind="item.purchaser.username"></span>
+        <span ng-if="item.purchaser"><a href="" ng-click="unpurchase(item)">unpurchase</a></span>
         <span ng-if="!item.purchaser">none - <a href="" ng-click="purchase(item)">purchase</a></span>
         <span><a ui-sref="itemShow({id: item.id})">view</a></span>
       </td>

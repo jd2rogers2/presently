@@ -10,6 +10,13 @@
 + users have to accept friend request. Friendships table has status column
 + may need to load @list in friendships#create if added from a different user's profile, or just don't allow that?
 
+from item_controller.rb
+        # rendering list for when item is purchased on another user's page
+        # and from item edit page autoredirect back to list
+        # unpurchase button from purcahses page is redirecting
+        # to your list because we could only render list if we passed 
+        # a key in params and made an if statement here
+
 
 ----- errors -----
 + logout on navbar.html only working on second click??

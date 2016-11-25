@@ -11,10 +11,14 @@ module Api
       end
 
       def update
-        binding.pry
         set_item
         @item.update(item_params)
         @list = List.find_by(id: @item.list_id)
+        # rendering list for when item is purchased on another user's page
+        # and from item edit page autoredirect back to list
+        # unpurchase button from purcahses page is redirecting
+        # to your list because we could only render list if we passed 
+        # a key in params and made an if statement here
         # redirect_to item_path(@item)
         render json: @list
       end

@@ -33,6 +33,13 @@
       itemFactory.update(temp);
       $state.go($state.current, {}, {reload: true})
     }
+
+    $scope.unpurchase = function(item){
+      item.purchaser_id = null;
+      var temp = {items: item, id: item.id}
+      itemFactory.update(temp);
+      $state.go($state.current, {}, {reload: true})
+    }
   }
 
   listController.$inject = ['$scope', 'Auth', '$stateParams', '$state', 'itemFactory', 'listFactory']

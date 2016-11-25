@@ -3,7 +3,7 @@
   <ul>
     <li ng-repeat="purchase in currentUser.purchases">
       buying <a ui-sref="itemShow({id: purchase.id})" ng-bind="purchase.name"></a>
-      for <a ui-sref="list({id: purchase.list.id})" ng-bind="purchase.list.username"></a> - <button ng-click="unpurchase(purchase)">unpurchase</button>
+      for <a ui-sref="list({id: purchase.list.id})" ng-bind="purchase.list.username"></a> - <a href="" ng-click="unpurchase(purchase)">unpurchase</a>
     </li>
   </ul>
 </div>
