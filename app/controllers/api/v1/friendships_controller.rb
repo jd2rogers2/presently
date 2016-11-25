@@ -28,7 +28,7 @@ module Api
 
       private
       def set_friendship
-        @item = Friendship.find_by(id: params[:id])
+        @friendship = Friendship.find_by(id: params[:id])
       end
 
       def friendship_params
