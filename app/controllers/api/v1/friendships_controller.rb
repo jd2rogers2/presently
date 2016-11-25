@@ -21,9 +21,9 @@ module Api
 
       def destroy
         set_friendship
+        @user = User.find_by(id: @friendship.user_id)
         @friendship.destroy
-        @friendships = Friendship.all
-        render json: @friendships
+        render json: @user
       end
 
       private

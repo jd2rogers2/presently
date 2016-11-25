@@ -18,8 +18,14 @@
       return $filter('alreadyFriendFilter')($scope.currentUser, user)
     }
 
-    $scope.requestFriend = function(user){
-      friendshipFactory.save({friendships: {user_id: $scope.currentUser.id, friend_id: user.id}});
+    $scope.requestFriend = function(new_friend){
+      friendshipFactory.save({friendships: {user_id: $scope.currentUser.id, friend_id: new_friend.id}});
+      $state.go($state.current, {}, {reload: true});
+    }
+
+    $scope.unfriend = function(friend){
+      var temp = {id: friend.friendship_id, friendships: {user_id: $scope.currentUser.id, friend_id: friend.id}};
+      friendshipFactory.delete(temp);
       $state.go($state.current, {}, {reload: true});
     }
   }
