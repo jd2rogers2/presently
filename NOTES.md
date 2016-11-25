@@ -1,5 +1,4 @@
 ----- current -----
-+ add button friend for other users
 + purchases page
 + calendar page
 

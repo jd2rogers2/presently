@@ -1,3 +1,9 @@
 <div class="my-purchases">
   <h4>my purchases</h4>
+  <ul>
+    <li ng-repeat="purchase in currentUser.purchases">
+      buying <a ui-sref="itemShow({id: purchase.id})" ng-bind="purchase.name"></a>
+      for <a ui-sref="list({id: purchase.list.id})" ng-bind="purchase.list.username"></a>
+    </li>
+  </ul>
 </div>

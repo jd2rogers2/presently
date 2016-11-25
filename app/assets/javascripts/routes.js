@@ -23,7 +23,7 @@
         .state('userPurchases', {
           url: '/users/:id/purchases',
           templateUrl: 'views/purchases.html',
-          controller: 'userController as userCtrl',
+          controller: 'purchaseController as purchaseCtrl',
           onEnter: function($state, Auth){
             if (!Auth._currentUser){
               $state.go('login')
