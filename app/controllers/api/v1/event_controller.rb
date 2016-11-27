@@ -1,0 +1,42 @@
+module Api
+  module V1
+    class EventsController < ApplicationController
+      before_action :authenticate_user!, only: [:create, :update, :destroy]
+      
+      def create
+        @event = Event.create(event_params)
+        @user = User.find_by(id: @event.user_id)
+        render json: @user
+      end
+
+      def show
+        set_event
+        render json: @event
+      end
+
+      def update
+      end
+
+      def index
+        @events = Event.all
+        render json: @events
+      end
+
+      def destroy
+        set_event
+        @user = User.find_by(id: @event.user_id)
+        @event.destroy
+        render json: @user
+      end
+
+      private
+      def set_event
+        @event = Event.find_by(id: params[:id])
+      end
+
+      def event_params
+        params.require(:events).permit(:id, :name, :user_id)
+      end
+    end
+  end
+end

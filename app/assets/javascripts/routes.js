@@ -30,10 +30,10 @@
             }
           }
         })
-        .state('userCalendar', {
-          url: '/users/:id/calendar',
-          templateUrl: 'views/calendar.html',
-          controller: 'userController as userCtrl',
+        .state('userEvents', {
+          url: '/users/:id/events',
+          templateUrl: 'views/events.html',
+          controller: 'eventController as eventCtrl',
           onEnter: function($state, Auth){
             if (!Auth._currentUser){
               $state.go('login')

@@ -1,12 +1,14 @@
 ----- current -----
-+ purchases page
-+ calendar page
++ event page (friend's bdays/events, holidays)
++ can upload pics for items and users
++ error messages
++ edit profile functionality
++ add notes and price attrs to items
++ ngMessages
++ get rid of all uses of $scope?
 
 + error messages upon bad login in LoginController.js
-+ edit profile functionality
-  <button>edit profile</button>
 + users on destroy deletes list and items
-+ add notes and price attrs to items
 + users have to accept friend request. Friendships table has status column
 + may need to load @list in friendships#create if added from a different user's profile, or just don't allow that?
 
@@ -29,8 +31,6 @@ from item_controller.rb
 + check out ngMessages
 + user can upload their picture
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
-+ google calendar
-+ oAuth
 
 
 ----- questions -----
