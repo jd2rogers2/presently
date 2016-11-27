@@ -7,12 +7,12 @@ end
 
 9.times do |i|
   Friendship.create(user_id: i + 1, friend_id: i + 2)
-  Friendship.create(user_id: i + 2, friend_id: i + 1)
 end
 
-10.times do |i|
-  List.create(user_id: i + 1)
-end
+# user model has after_create :list
+# 10.times do |i|
+#   List.create(user_id: i + 1)
+# end
 
 9.times do |i|
   string = 'item_' + (i + 1).to_s

@@ -14,6 +14,7 @@
     }
 
     $scope.register = function(){
+      debugger;
       Auth.register($scope.new_user).then(function(response){
         $state.go('list', {id: response.id})
       }, function(response){

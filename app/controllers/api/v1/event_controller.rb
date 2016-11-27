@@ -15,6 +15,9 @@ module Api
       end
 
       def update
+        set_event
+        @event.update(event_params)
+        render json: @event
       end
 
       def index

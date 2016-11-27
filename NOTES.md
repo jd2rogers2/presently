@@ -1,9 +1,12 @@
 ----- current -----
-+ event page (friend's bdays/events, holidays)
++ implement events
+  change user register page to ask for everything
+  make users list page show there events, aboutme, etc
+  make create event page/my events page
+  make events list on users profile page
 + can upload pics for items and users
 + error messages
 + edit profile functionality
-+ add notes and price attrs to items
 + ngMessages
 + get rid of all uses of $scope?
 
@@ -20,7 +23,8 @@ from item_controller.rb
         # a key in params and made an if statement here
 
 
------ errors -----
+----- issues -----
++ seed file creating doubles for friendships
 + logout on navbar.html only working on second click??
 + adding/editing items works but only shows upon refresh
 
