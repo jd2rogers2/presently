@@ -15,6 +15,7 @@
     });
 
     $scope.createEvent = function(){
+      debugger;
       // might need to mess with date here
       var temp = {events: $scope.new_event}
       eventFactory.save(temp);
