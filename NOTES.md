@@ -1,7 +1,7 @@
 ----- current -----
 + implement events
   change user register page to ask for everything
-  make users list page show there events, aboutme, etc
+  make users list page show their events, aboutme, etc
   make create event page/my events page
   make events list on users profile page
 + can upload pics for items and users
@@ -24,7 +24,6 @@ from item_controller.rb
 
 
 ----- issues -----
-+ seed file creating doubles for friendships
 + logout on navbar.html only working on second click??
 + adding/editing items works but only shows upon refresh
 
@@ -41,6 +40,8 @@ from item_controller.rb
 + line 6 app controller.rb, skip needed/wanted?
 + .db file gone
 + .run in app.js, how does this work?
++ seed file creating doubles for friendships
+  workaround with a backend filter in user_serializer
 + why activate vs resolve?
   refactor after graduation to use resolves?
 

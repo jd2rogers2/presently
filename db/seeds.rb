@@ -5,8 +5,9 @@
   User.create(username: string, email: string + '@test.com', password: 'password', bday: date, aboutme: string)
 end
 
-9.times do |i|
-  Friendship.create(user_id: i + 1, friend_id: i + 2)
+10.times do |i|
+  num = i + 1
+  Friendship.create(user_id: num, friend_id: num + 1)
 end
 
 # user model has after_create :list
@@ -14,9 +15,10 @@ end
 #   List.create(user_id: i + 1)
 # end
 
-9.times do |i|
-  string = 'item_' + (i + 1).to_s
-  Item.create(name: string, list_id: i, purchaser_id: i + 1, url: 'url')
+10.times do |i|
+  num = i + 1
+  string = 'item_' + (num).to_s
+  Item.create(name: string, list_id: num, purchaser_id: num, url: 'url')
 end
 
 # This file should contain all the record creation needed to seed the database with its default values.
