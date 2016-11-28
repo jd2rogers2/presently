@@ -1,12 +1,9 @@
 ----- current -----
-+ implement events
-  make users list page show their events, aboutme, etc
-  make create event page/my events page
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
 + edit profile functionality
-+ ngMessages
 + get rid of all uses of $scope?
++ view/edit events?
 
 *** Data should be validated in Angular before submission
 *** edit items in list page or something like that

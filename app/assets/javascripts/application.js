@@ -13,6 +13,7 @@
 //= require jquery
 //= require angular
 //= require angular-devise
+//= require angular-messages
 //= require angular-ui-router
 //= require angular-resource
 //= require bootstrap-sprockets

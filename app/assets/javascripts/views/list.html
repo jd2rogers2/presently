@@ -22,23 +22,20 @@
 </div>
 
 <!-- if you're viewing someone else's list -->
-<div></div>
-
-<!-- if it's your list -->
-<div ng-if="userEqaulsOwner()">
-  <div id="createItemForm">
-    <!-- novalidate as attr in below form? -->
-    <form ng-submit="createItem(new_item)">
-      <input value="item name" ng-model="new_item.items.name"></input>
-      <input value="reference url" ng-model="new_item.items.url"></input>
-      <input type="submit" value="add item"></input>
-    </form>
-  </div> <!-- create item form -->
-
+<div ng-if="!userEqualsOwner()">
   <div id="usersEvents">
-    <h6><span ng-bind="listsUser.username"></span>'s events</h6>
+    <h4><span ng-bind="listsUser.username"></span>'s events</h4>
     <ul>
       <li ng-repeat="event in listsUser.events"><span ng-bind="event.name"></span> is on <span ng-bind="event.date"></span></li>
     </ul>
   </div>  <!-- usersEvents -->
-</div> <!-- ng if user = owner -->
+</div>
+
+<!-- if it's your list -->
+
+<!-- novalidate as attr in below form? -->
+<form ng-if="userEqaulsOwner()" ng-submit="createItem(new_item)">
+  <input value="item name" ng-model="new_item.items.name"></input>
+  <input value="reference url" ng-model="new_item.items.url"></input>
+  <input type="submit" value="add item"></input>
+</form>

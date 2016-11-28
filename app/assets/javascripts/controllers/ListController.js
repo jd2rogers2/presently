@@ -6,8 +6,8 @@
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
     });
-    $scope.list = listFactory.get({id: $stateParams.id});
-    $scope.listsUser = userFactory.get({id: $scope.list.user.id});
+    $scope.list = listFactory.get({id: $stateParams.id})
+    $scope.listsUser = userFactory.get({id: $stateParams.id});
 
     $scope.createItem = function(input){
       input.items.list_id = $scope.currentUser.list.id;
@@ -21,7 +21,7 @@
     }
 
     $scope.userEqualsOwner = function(){
-      if ($scope.currentUser.id == $scope.list.user_id) {
+      if ($scope.currentUser.id == $stateParams.id) {
         return true;
       } else {
         return false;

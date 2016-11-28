@@ -1,5 +1,18 @@
+<div class="msgbar">
+  <div ng-messages="loginForm.myName.$error" style="color:maroon" role="alert">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">Your field is too short</div>
+    <div ng-message="maxlength">Your field is too long</div>
+  </div>
+  <div ng-messages="registerForm.myName.$error" style="color:maroon" role="alert">
+    <div ng-message="required">You did not enter a field</div>
+    <div ng-message="minlength">Your field is too short</div>
+    <div ng-message="maxlength">Your field is too long</div>
+  </div>
+</div>
+
 <div id="sign-in">
-  <form ng-submit="login()">
+  <form ng-submit="login()" name="loginForm">
     <input type="text" name="username" placeholder="username" ng-model="user.username" /><br>
     <input type="email" name="email" placeholder="email" ng-model="user.email" /><br>
     <input type="password" name="password" placeholder="password" ng-model="user.password" /><br>
@@ -8,7 +21,7 @@
 </div><br>
 
 <div id="sign-up">
-  <form ng-submit="register()">
+  <form ng-submit="register()" name="registerForm">
     <input type="text" name="username" placeholder="username" ng-model="new_user.username" /><br>
     <input type="email" name="email" placeholder="email" ng-model="new_user.email" /><br>
     <input type="password" name="password" placeholder="password" ng-model="new_user.password" /><br>

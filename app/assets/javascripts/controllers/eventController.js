@@ -15,12 +15,9 @@
     });
 
     $scope.createEvent = function(){
-      debugger;
-      // might need to mess with date here
-      var temp = {events: $scope.new_event}
+      var temp = {events: {name: $scope.new_event.name, date: $scope.new_event.date, user_id: $scope.currentUser.id}};
       eventFactory.save(temp);
-      $state.reload();
-      // $state.go($state.current, {}, {reload: true});
+      $state.go($state.current, {}, {reload: true});
     }
   }
 
