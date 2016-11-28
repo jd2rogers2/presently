@@ -1,5 +1,5 @@
-<div class="upcoming-events">
-  <h4>upcoming events</h4>
+<div class="friends-events">
+  <h4>friends' events</h4>
   <ul>
     <li ng-repeat="event in upcomingEvents">
       <span ng-bind="event.username"></span>'s <span ng-bind="event.name"></span> on <span ng-bind="event.date"></span>
@@ -7,6 +7,15 @@
   </ul>
 </div>
 <br>
+
+<div class="my-events">
+  <h4>my events</h4>
+  <ul>
+    <li ng-repeat="eve in currentUser.events">
+      <span ng-bind="eve.name"></span> on <span ng-bind="eve.date"></span>
+    </li>
+  </ul>
+</div>
 
 <div class="create-event">
   create a new event <br>
