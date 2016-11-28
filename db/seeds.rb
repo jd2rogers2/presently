@@ -18,7 +18,8 @@ end
 10.times do |i|
   num = i + 1
   string = 'item_' + (num).to_s
-  Item.create(name: string, list_id: num, purchaser_id: num + 1, url: 'www.url.com')
+  Item.create(name: string, list_id: num, purchaser_id: num + 1, url: 'www.url.com', notes: "i really want this one guys", price: num + 20)
+  Item.create(name: string + num.to_s, list_id: num, purchaser_id: nil, url: 'www.url.com', notes: "i really really want this one guys", price: num + 200)
 end
 
 # This file should contain all the record creation needed to seed the database with its default values.
