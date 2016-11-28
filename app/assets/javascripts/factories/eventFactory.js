@@ -2,7 +2,7 @@
   'use strict';
 
   function eventFactory($resource){
-    return $resource('/api/v1/friendships/:id.json', {id: '@id'}, {
+    return $resource('/api/v1/events/:id.json', {id: '@id'}, {
       "update": {method: "PUT"}
     });
   }

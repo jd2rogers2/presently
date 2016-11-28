@@ -8,6 +8,10 @@
 + ngMessages
 + get rid of all uses of $scope?
 
+*** Data should be validated in Angular before submission
+*** edit items in list page or something like that
+*** state.reload() - nested routes lesson
+
 + users on destroy deletes list and items
 + may need to load @list in friendships#create if added from a different user's profile, or just don't allow that?
 
@@ -27,6 +31,7 @@
 ----- potential features -----
 + items have rank (what you want most)
 + delete item? what if it's already purchased, not deleting can also stink for user
++ make recurring events automatic
 
 
 ----- questions -----

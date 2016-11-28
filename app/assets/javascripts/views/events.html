@@ -1,6 +1,10 @@
 <div class="upcoming-events">
   <h4>upcoming events</h4>
-  <!-- list of friends' events -->
+  <ul>
+    <li ng-repeat="event in upcomingEvents">
+      <span ng-bind="event.user.username"></span>'s event on <span ng-bind="event.date"></span>
+    </li>
+  </ul>
 </div>
 <br>
 
