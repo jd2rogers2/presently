@@ -1,18 +1,7 @@
-<div class="msgbar">
-  <div ng-messages="loginForm.myName.$error" style="color:maroon" role="alert">
-    <div ng-message="required">You did not enter a field</div>
-    <div ng-message="minlength">Your field is too short</div>
-    <div ng-message="maxlength">Your field is too long</div>
-  </div>
-  <div ng-messages="registerForm.myName.$error" style="color:maroon" role="alert">
-    <div ng-message="required">You did not enter a field</div>
-    <div ng-message="minlength">Your field is too short</div>
-    <div ng-message="maxlength">Your field is too long</div>
-  </div>
-</div>
+<div ng-include="'views/loginMsgs.html'"></div>
 
 <div id="sign-in">
-  <form ng-submit="login()" name="loginForm">
+  <form ng-submit="login()">
     <input type="text" name="username" placeholder="username" ng-model="user.username" /><br>
     <input type="email" name="email" placeholder="email" ng-model="user.email" /><br>
     <input type="password" name="password" placeholder="password" ng-model="user.password" /><br>
@@ -22,11 +11,11 @@
 
 <div id="sign-up">
   <form ng-submit="register()" name="registerForm">
-    <input type="text" name="username" placeholder="username" ng-model="new_user.username" /><br>
-    <input type="email" name="email" placeholder="email" ng-model="new_user.email" /><br>
-    <input type="password" name="password" placeholder="password" ng-model="new_user.password" /><br>
-    <input type="text" name="aboutme" placeholder="about me" ng-model="new_user.aboutme" /><br>
-    <input type="date" name="bday" ng-model="new_user.bday" /><br>
+    <input type="text" name="username" placeholder="username" ng-model="new_user.username" required minlength="6" /><br>
+    <input type="email" name="email" placeholder="email" ng-model="new_user.email" required /><br>
+    <input type="password" name="password" placeholder="password" ng-model="new_user.password" required minlength="6" /><br>
+    <input type="text" name="aboutme" placeholder="about me" ng-model="new_user.aboutme" required minlength="6" /><br>
+    <input type="date" name="bday" required ng-model="new_user.bday" required /><br>
     <input type="submit" value="register">
   </form>
 </div>

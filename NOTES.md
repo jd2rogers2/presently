@@ -1,13 +1,13 @@
 ----- current -----
+*** item create form not showing up
+*** edit items in list page or something like that
+*** state.reload() - nested routes lesson
+====================================================
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
 + edit profile functionality
 + get rid of all uses of $scope?
 + view/edit events?
-
-*** Data should be validated in Angular before submission
-*** edit items in list page or something like that
-*** state.reload() - nested routes lesson
 
 + users on destroy deletes list and items
 + may need to load @list in friendships#create if added from a different user's profile, or just don't allow that?
