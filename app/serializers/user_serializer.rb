@@ -1,4 +1,3 @@
-require 'pry'
 class UserSerializer < ActiveModel::Serializer
   def list
     {id: object.list.id, user: {id: object.list.user.id, username: object.list.user.username}}

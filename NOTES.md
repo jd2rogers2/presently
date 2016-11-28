@@ -1,6 +1,5 @@
 ----- current -----
 + implement events
-  change user register page to ask for everything
   make users list page show their events, aboutme, etc
   make create event page/my events page
   make events list on users profile page
@@ -24,8 +23,8 @@ from item_controller.rb
 
 
 ----- issues -----
-+ logout on navbar.html only working on second click??
-+ adding/editing items works but only shows upon refresh
++ adding/editing/purchasing items, friending works but only shows upon refresh. `$state.go($state.current etc.)` not working
++ loginController.register() not passing aboutme and bday to new users
 
 
 ----- potential features -----

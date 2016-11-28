@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :purchases, class_name: 'Item', foreign_key: 'purchaser_id'
   has_many :events
   after_create :add_list, :bday_to_event
+  # validates :bday, presence: true
+  # validates :aboutme, presence: true
 
   def add_list
     List.create(user_id: self.id)
