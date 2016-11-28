@@ -5,15 +5,10 @@ class UserSerializer < ActiveModel::Serializer
   end
 
   def friends
-    array = []
-    binding.pry
-    object.friends.each do |fri|
-      json_data = {id: fri.id, username: fri.username, bday: fri.bday, aboutme: fri.aboutme, email: fri.email, friendship_id: Friendship.find_by(user_id: object.id, friend_id: fri.id).id, list: {id: fri.list.id}}
-      if !array.include?(json_data)
-        array << json_data
-      end
+    array = object.friends.collect do |fri|
+      {id: fri.id, username: fri.username, bday: fri.bday, aboutme: fri.aboutme, email: fri.email, friendship_id: Friendship.find_by(user_id: object.id, friend_id: fri.id).id, list: {id: fri.list.id}}
     end
-    return array
+    return array.uniq
   end
 
   attributes :id, :username, :bday, :aboutme, :email, :list, :friends

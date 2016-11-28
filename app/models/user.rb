@@ -8,9 +8,15 @@ class User < ApplicationRecord
   has_one :list
   has_many :purchases, class_name: 'Item', foreign_key: 'purchaser_id'
   has_many :events
-  after_create :add_list
+  after_create :add_list, :bday_to_event
 
   def add_list
     List.create(user_id: self.id)
+  end
+
+  def bday_to_event
+    if bday
+      Event.create(user_id: self.id, date: bday, name: "my birthday")
+    end
   end
 end
