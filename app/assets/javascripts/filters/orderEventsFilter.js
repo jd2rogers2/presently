@@ -3,7 +3,9 @@
 
   function orderEventsFilter(){
     return function(allEvents){
-      debugger;
+      return allEvents.sort(function(a, b){
+        return a.date < b.date
+      }).reverse();
     }
   }
 

@@ -1,15 +1,18 @@
 (function(){
   'use strict';
 
-  function eventController($scope, $state, Auth, eventFactory){
+  function eventController($scope, $state, Auth, eventFactory, $filter){
     var eventCtrl = this;
-    activate();
-
-    function setUser(){
-      Auth.currentUser().then(function(data){
-        $scope.currentUser = data;
-      });
-    }
+    Auth.currentUser().then(function(data){
+      $scope.currentUser = data;
+      var array = [];
+      $scope.currentUser.friends.forEach(function(friend){
+        friend.events.forEach(function(event){
+          array.push(event);
+        })
+      })
+      $scope.upcomingEvents = $filter('orderEventsFilter')(array);
+    });
 
     $scope.createEvent = function(){
       // might need to mess with date here
@@ -18,24 +21,9 @@
       $state.reload();
       // $state.go($state.current, {}, {reload: true});
     }
-
-    function getEvents(){
-      var array = [];
-      $scope.currentUser.friends.forEach(function(friend){
-        friend.events.forEach(function(event){
-          array.push(event);
-        })
-      })
-      $scope.upcomingEvents = array.$filter('orderEvents')(array)
-    }
-
-    function activate(){
-      setUser();
-      getEvents()
-    }
   }
 
-  eventController.$inject =['$scope', '$state', 'Auth', 'eventFactory']
+  eventController.$inject =['$scope', '$state', 'Auth', 'eventFactory', '$filter']
 
   angular
     .module('app')
