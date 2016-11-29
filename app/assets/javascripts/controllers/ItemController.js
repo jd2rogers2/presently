@@ -3,12 +3,12 @@
 
   function itemController($scope, $state, $stateParams, itemFactory, Auth){
     var itemCtrl = this;
-    $scope.item = {items: itemFactory.get({id: $stateParams.id}), 
-                      id: $stateParams.id
-                  }
+    $scope.item = itemFactory.get({id: $stateParams.id}); 
+
     $scope.update = function(){
-      itemFactory.update($scope.item);
-      $state.go('userList', {id: $scope.item.id})
+      var temp = {items: $scope.item, id: $stateParams.id};
+      itemFactory.update(temp);
+      $state.go('list', {id: $scope.item.id});
     }
   }
 

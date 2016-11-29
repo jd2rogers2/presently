@@ -1,7 +1,9 @@
-<a href="" ui-sref="userList({id: item.items.list.user.id})">back</a>
+<a href="" ui-sref="list({id: item.list.user.id})">back</a>
 <br>
 <br>
 item pic <br>
 item pic <br>
-<span ng-bind="item.items.name"></span><br>
-<span ng-bind="item.items.url"></span><br>
+name: <span ng-bind="item.name"></span><br>
+$ <span ng-bind="item.price"></span><br>
+url: <span ng-bind="item.url"></span><br>
+notes: <span ng-bind="item.notes"></span><br>
