@@ -1,8 +1,5 @@
 ----- current -----
-*** edit items in list page or something like that
 *** readme
-*** validate all data
-    input="number"
 *** spec.md
 ====================================================
 + can upload pics for items and users

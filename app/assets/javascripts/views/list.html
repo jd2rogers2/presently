@@ -16,11 +16,11 @@
   </table>
 </div>
 
-<form>
-  <input value="name" ng-model="new_item.items.name" placeholder="name" />
-  <input value="price" ng-model="new_item.items.price" placeholder="price" />
-  <input value="url" ng-model="new_item.items.url" placeholder="url" />
-  <input type="submit" value="add item" ng-click="createItem(new_item)" />
+<form ng-submit="createItem(new_item)">
+  <input type="text" value="name" ng-model="new_item.items.name" placeholder="name" />
+  <input type="number" value="0" ng-model="new_item.items.price" placeholder="price" />
+  <input type="url" value="url" ng-model="new_item.items.url" placeholder="url" />
+  <input type="submit" value="add item" />
 </form>
 
 
