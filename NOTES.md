@@ -1,5 +1,4 @@
 ----- current -----
-*** nested views
 *** edit items in list page or something like that
 *** readme
 *** validate all data
