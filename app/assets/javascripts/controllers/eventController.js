@@ -19,6 +19,13 @@
         $scope.currentUser.events = response.events;
       });
     }
+
+    $scope.deleteEvent = function(event){
+      var temp = {id: event.id, events: event}
+      eventFactory.delete(temp).$promise.then(function(response){
+        $scope.currentUser.events = response.events;
+      })
+    }
   }
 
   eventController.$inject =['$scope', '$state', 'Auth', 'eventFactory']

@@ -11,7 +11,7 @@
   <h4>these are your events</h4>
   <ul>
     <li ng-repeat="eve in currentUser.events | orderBy:'date'">
-      <span ng-bind="eve.name"></span> on <span ng-bind="eve.date"></span>
+      <span ng-bind="eve.name"></span> on <span ng-bind="eve.date"></span><a href="" ng-click="deleteEvent(eve)">delete</a>
     </li>
   </ul>
 </div>
