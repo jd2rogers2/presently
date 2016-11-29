@@ -1,7 +1,6 @@
 ----- current -----
 *** item create form not showing up
 *** edit items in list page or something like that
-*** state.reload() - nested routes lesson
 ====================================================
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
