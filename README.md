@@ -1,24 +1,30 @@
-# README
+Description: 
+Presently is intended to be a year round gift registry/shopping list. It also has the added benefit of being a universal wishlist. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To get up and running:
 
-Things you may want to cover:
+  heroku...
+    Visit https://presently.herokuapp.com/
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  fork...
+    git clone SSH
+    cd presently
+    rails db:migrate
+    rails db:seed
+    rails s
+    gems dependencies etc.
+    stock ruby gems and...
+      "angular": "v1.5.8",
+      "angular-ui-router": "latest",
+      "angular-resource": "v1.5.3",
+      "angular-devise": "latest",
+      "angular-messages": "latest",
+      "moment": "latest",
+      "bootstrap": "latest"
+      gem 'bower-rails', '~> 0.11.0'
+      gem 'bootstrap-sass', '~> 3.3.6'
+      gem 'angular-rails-templates'
+      gem 'devise'
+      gem 'responders'
+      gem 'active_model_serializers'
+      gem 'pg', '~> 0.18'

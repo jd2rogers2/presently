@@ -1,7 +1,4 @@
 ----- current -----
-*** readme
-*** spec.md
-====================================================
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
 + edit profile functionality
