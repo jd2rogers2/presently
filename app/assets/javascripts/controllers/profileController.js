@@ -16,17 +16,17 @@
 
     $scope.purchase = function(item){
       item.purchaser_id = $scope.currentUser.id;
-      var temp = {items: item, id: item.id, plzrender: $scope.viewUser.id}
+      var temp = {items: item, id: item.id, plzrender: 'list'}
       itemFactory.update(temp).$promise.then(function(response){
-        $scope.viewUser.list.items = response.list.items;
+        $scope.viewUser.list = response;
       });
     }
 
     $scope.unpurchase = function(item){
       item.purchaser_id = null;
-      var temp = {items: item, id: item.id, plzrender: $scope.viewUser.id}
+      var temp = {items: item, id: item.id, plzrender: 'list'}
       itemFactory.update(temp).$promise.then(function(response){
-        $scope.viewUser = response;
+        $scope.viewUser.list = response;
       });
     }
 
