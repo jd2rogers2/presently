@@ -1,11 +1,10 @@
 ----- current -----
-+ testing
-do we even need if's in ctrl.rbs? check all ctrl.js
-orderby in all repeats?
 + delete events
++ how to push to heroku vid
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
 + edit profile functionality
++ login error messages
 
 + from item_controller.rb
         # rendering list for when item is purchased on another user's page
