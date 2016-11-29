@@ -8,7 +8,7 @@
     $scope.update = function(){
       var temp = {items: $scope.item, id: $stateParams.item_id};
       itemFactory.update(temp);
-      $state.go('list', {id: $scope.item.id});
+      $state.go('list', {id: $scope.item.list.id});
     }
   }
 
