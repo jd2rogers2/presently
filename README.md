@@ -4,7 +4,7 @@ Presently is intended to be a year round gift registry/shopping list. It also ha
 To get up and running:
 
   heroku...
-    Visit https://presently.herokuapp.com/
+    Visit https://jd2rogers2-presently.herokuapp.com/
 
   fork...
     git clone SSH
