@@ -1,6 +1,4 @@
 ----- current -----
-*** item create form not showing up
-    child scope stuff
 *** edit items in list page or something like that
 ====================================================
 + can upload pics for items and users

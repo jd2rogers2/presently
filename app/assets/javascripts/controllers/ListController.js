@@ -13,21 +13,20 @@
     $scope.new_item = {items: {name: '', price: '', url: ''}};
 
     $scope.createItem = function(input){
-      debugger;
       input.items.list_id = $scope.currentUser.list.id;
       itemFactory.save(input).$promise.then(function(response){
         $scope.list = response;
       });
     }
 
+    $scope.userEqualsOwner = function(){
+      return $scope.currentUser.list.id == $stateParams.id;
+    }
+
     $scope.deleteItem = function(item){
       itemFactory.delete(item).$promise.then(function(response){
         $scope.list = response;
       });
-    }
-
-    $scope.userEqualsOwner = function(){
-      return $scope.currentUser.list.id == $stateParams.id;
     }
 
     $scope.purchase = function(item){

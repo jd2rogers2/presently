@@ -20,16 +20,15 @@
       <td ng-if="userEqualsOwner()"><a ui-sref="itemEdit({id: item.id})">view/edit</a></td>
       <td ng-if="userEqualsOwner()"><a href="" ng-click="deleteItem(item)">delete</a></td>
     </tr>
-    <tr ng-if="userEqaulsOwner()">
-      <form ng-submit="createItem()">
-        <td><input value="name" ng-model="new_item.items.name" placeholder="name" /></td>
-        <td><input value="price" ng-model="new_item.items.price" placeholder="price" /></td>
-        <td><input value="url" ng-model="new_item.items.url" placeholder="url" /></td>
-        <td><input type="submit" value="add item" /></td>
-      </form>
-    </tr>
   </table>
 </div>
+
+<form ng-if="userEqualsOwner()">
+  <input value="name" ng-model="new_item.items.name" placeholder="name" />
+  <input value="price" ng-model="new_item.items.price" placeholder="price" />
+  <input value="url" ng-model="new_item.items.url" placeholder="url" />
+  <input type="submit" value="add item" ng-click="createItem()" />
+</form>
 
 <!-- if you're viewing someone else's list -->
 
