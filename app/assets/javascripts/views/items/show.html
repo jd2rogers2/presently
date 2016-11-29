@@ -1,4 +1,5 @@
-<a href="" ui-sref="list({id: item.list.user.id})">back</a>
+<a ng-if="currentUser.list.id == item.list.id" href="" ui-sref="list({id: item.list.id})"><< my list</a>
+<a ng-if="currentUser.list.id != item.list.id" href="" ui-sref="userProfile({id: item.list.user.id})"><< user's profile</a>
 <br>
 <br>
 item pic <br>

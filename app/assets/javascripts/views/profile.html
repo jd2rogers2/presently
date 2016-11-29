@@ -19,12 +19,14 @@
     <tr>
       <th>name</th>
       <th>price</th>
+      <th>notes</th>
       <th>external url</th>
       <th ng-if="!userEqualsOwner()">purchaser</th>
     </tr>
-    <tr ng-repeat="item in viewUser.list.items">
+    <tr ng-repeat="item in viewUser.list.items | orderBy:'name'">
       <td ng-bind="item.name"></td>
       <td>$<span ng-bind="item.price"></span></td>
+      <td ng-bind="item.notes"></td>
       <td ng-bind="item.url"></td>
       <td ng-if="!userEqualsOwner()">
         <span ng-if="item.purchaser" ng-bind="item.purchaser.username"></span>

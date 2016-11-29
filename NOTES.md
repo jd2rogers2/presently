@@ -2,6 +2,8 @@
 + testing
 back button on item view always goes to item's list
 not good when you're viewing someone else's list
+do we even need if's in ctrl.rbs? check all ctrl.js
+orderby in all repeats?
 + delete events
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
