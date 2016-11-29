@@ -10,7 +10,6 @@
     $scope.list.$promise.then(function(list){
       $scope.listsUser = userFactory.get({id: list.user.id});
     })
-    $scope.new_item = {items: {name: '', price: '', url: ''}};
 
     $scope.createItem = function(input){
       input.items.list_id = $scope.currentUser.list.id;

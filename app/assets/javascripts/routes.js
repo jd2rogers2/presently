@@ -74,8 +74,8 @@
         })
 
         $stateProvider
-          .state('itemEdit', {
-            url: '/items/:id/edit',
+          .state('listItemEdit', {
+            url: '/list/:list_id/items/:item_id/edit',
             templateUrl: 'views/items/edit.html',
             controller: 'itemController as itemCtrl',
             onEnter: function($state, Auth){
@@ -84,8 +84,8 @@
               }
             }
           })
-          .state('itemShow', {
-            url: '/items/:id',
+          .state('listItemShow', {
+            url: '/list/:list_id/items/:item_id',
             templateUrl: 'views/items/show.html',
             controller: 'itemController as itemCtrl',
             onEnter: function($state, Auth){

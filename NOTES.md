@@ -1,5 +1,10 @@
 ----- current -----
+*** nested views
 *** edit items in list page or something like that
+*** readme
+*** validate all data
+    input="number"
+*** spec.md
 ====================================================
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html

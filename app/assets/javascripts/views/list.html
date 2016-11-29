@@ -15,9 +15,9 @@
         <span ng-if="item.purchaser" ng-bind="item.purchaser.username"></span>
         <span ng-if="currentUser.id == item.purchaser.id"><a href="" ng-click="unpurchase(item)">unpurchase</a></span>
         <span ng-if="!item.purchaser">none - <a href="" ng-click="purchase(item)">purchase</a></span>
-        <span><a ui-sref="itemShow({id: item.id})">view</a></span>
+        <span><a ui-sref="listItemShow({list_id: list.id, item_id: item.id})">view</a></span>
       </td>
-      <td ng-if="userEqualsOwner()"><a ui-sref="itemEdit({id: item.id})">view/edit</a></td>
+      <td ng-if="userEqualsOwner()"><a ui-sref="listItemEdit({list_id: list.id, item_id: item.id})">view/edit</a></td>
       <td ng-if="userEqualsOwner()"><a href="" ng-click="deleteItem(item)">delete</a></td>
     </tr>
   </table>
@@ -27,7 +27,7 @@
   <input value="name" ng-model="new_item.items.name" placeholder="name" />
   <input value="price" ng-model="new_item.items.price" placeholder="price" />
   <input value="url" ng-model="new_item.items.url" placeholder="url" />
-  <input type="submit" value="add item" ng-click="createItem()" />
+  <input type="submit" value="add item" ng-click="createItem(new_item)" />
 </form>
 
 <!-- if you're viewing someone else's list -->
