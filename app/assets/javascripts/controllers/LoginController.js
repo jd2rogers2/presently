@@ -14,8 +14,6 @@
     }
 
     $scope.register = function(){
-      // passing in object with aboutme and bday but below response
-      // has both their values at null
       Auth.register($scope.new_user).then(function(response){
         $state.go('list', {id: response.id})
       }, function(response){

@@ -13,7 +13,7 @@
           onEnter: function($state, Auth){
             if (Auth._currentUser){
               Auth.currentUser().then(function(data){
-                $state.go('userList', {id: data.id})
+                $state.go('list', {id: data.id})
               })
             }
           }

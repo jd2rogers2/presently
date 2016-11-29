@@ -6,10 +6,14 @@
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
     });
-    $scope.list = listFactory.get({id: $stateParams.id})
-    $scope.listsUser = userFactory.get({id: $stateParams.id});
+    $scope.list = listFactory.get({id: $stateParams.id});
+    $scope.list.$promise.then(function(list){
+      $scope.listsUser = userFactory.get({id: list.user.id});
+    })
+    $scope.new_item = {items: {name: '', price: '', url: ''}};
 
     $scope.createItem = function(input){
+      debugger;
       input.items.list_id = $scope.currentUser.list.id;
       itemFactory.save(input).$promise.then(function(response){
         $scope.list = response;
@@ -23,11 +27,7 @@
     }
 
     $scope.userEqualsOwner = function(){
-      if ($scope.currentUser.id == $stateParams.id) {
-        return true;
-      } else {
-        return false;
-      }
+      return $scope.currentUser.list.id == $stateParams.id;
     }
 
     $scope.purchase = function(item){

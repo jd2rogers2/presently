@@ -1,15 +1,15 @@
 ----- current -----
 *** item create form not showing up
+    child scope stuff
 *** edit items in list page or something like that
+*** on refresh redirecting to '/' (login) even when logged in
 ====================================================
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
 + edit profile functionality
 + get rid of all uses of $scope?
 + view/edit events?
-
-+ users on destroy deletes list and items
-+ may need to load @list in friendships#create if added from a different user's profile, or just don't allow that?
++ novalidate in forms?
 
 + from item_controller.rb
         # rendering list for when item is purchased on another user's page
@@ -20,21 +20,27 @@
 
 
 ----- issues -----
-+ adding/editing/purchasing items, friending works but only shows upon refresh. `$state.go($state.current etc.)` not working
-+ loginController.register() not passing aboutme and bday to new users
 
 
 ----- potential features -----
 + items have rank (what you want most)
 + delete item? what if it's already purchased, not deleting can also stink for user
 + make recurring events automatic
++ google calendar api
++ delete your account
+  users on destroy deletes list and items
+
 
 
 ----- questions -----
 + line 6 app controller.rb, skip needed/wanted?
 + .run in app.js, how does this work?
 + why activate vs resolve?
-  refactor after graduation to use resolves?
+  because updating dom on factory response?
++ i'll be working on this/other apps to try to get hired
+  what kind of app would get me hired?
+  examples?
+  requirements? (i.e. features of the app)
 
 
 ----- differences with model app -----
