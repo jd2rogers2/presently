@@ -1,5 +1,4 @@
 ----- current -----
-+ delete events
 + how to push to heroku vid
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
