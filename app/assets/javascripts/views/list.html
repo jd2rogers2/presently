@@ -7,7 +7,7 @@
       <th>notes</th>
       <th>external url</th>
     </tr>
-    <tr ng-repeat="item in list.items">
+    <tr ng-repeat="item in list.items | orderBy:'name'">
       <td ng-bind="item.name"></td>
       <td>$<span ng-bind="item.price"></span></td>
       <td ng-bind="item.notes"></td>

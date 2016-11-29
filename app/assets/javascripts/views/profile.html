@@ -9,7 +9,7 @@
 <div id="usersEvents">
   <h4><span ng-bind="viewUser.username"></span>'s events</h4>
   <ul>
-    <li ng-repeat="event in viewUser.events"><span ng-bind="event.name"></span> is on <span ng-bind="event.date"></span></li>
+    <li ng-repeat="event in viewUser.events | orderBy:'date'"><span ng-bind="event.name"></span> is on <span ng-bind="event.date"></span></li>
   </ul>
 </div>
 

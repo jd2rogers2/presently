@@ -1,7 +1,5 @@
 ----- current -----
 + testing
-back button on item view always goes to item's list
-not good when you're viewing someone else's list
 do we even need if's in ctrl.rbs? check all ctrl.js
 orderby in all repeats?
 + delete events
@@ -40,6 +38,7 @@ orderby in all repeats?
   examples?
   requirements? (i.e. features of the app)
 + unpurchase button acting really weird on purchases view
+  go to other user's profile and purchase, then return to their profile and purchase another item
 
 
 ----- differences with model app -----

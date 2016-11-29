@@ -15,7 +15,6 @@
     }
 
     $scope.purchase = function(item){
-      debugger;
       item.purchaser_id = $scope.currentUser.id;
       var temp = {items: item, id: item.id, plzrender: 'list'}
       itemFactory.update(temp).$promise.then(function(response){
