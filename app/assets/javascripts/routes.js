@@ -11,11 +11,9 @@
           templateUrl: 'views/login.html',
           controller: 'loginController as loginCtrl',
           onEnter: function($state, Auth){
-            if (Auth._currentUser){
-              Auth.currentUser().then(function(data){
-                $state.go('list', {id: data.id})
-              })
-            }
+            Auth.currentUser().then(function(data){
+              $state.go('list', {id: data.list.id})
+            })
           }
         })
 

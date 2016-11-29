@@ -19,11 +19,11 @@
 
     $scope.$on('devise:logout', function(event, data){
       $scope.currentUser = {};
+      $state.go('login')
     });
 
     $scope.logout = function(){
       Auth.logout();
-      $state.go('login')
     }
   }
 

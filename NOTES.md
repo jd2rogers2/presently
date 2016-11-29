@@ -2,7 +2,6 @@
 *** item create form not showing up
     child scope stuff
 *** edit items in list page or something like that
-*** on refresh redirecting to '/' (login) even when logged in
 ====================================================
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
