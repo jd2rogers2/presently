@@ -11,14 +11,15 @@
 
     $scope.createItem = function(input){
       input.items.list_id = $scope.currentUser.list.id;
-      itemFactory.save(input).$promise.then(function(){
-        $state.go($state.current, {}, {reload: true});
+      itemFactory.save(input).$promise.then(function(response){
+        $scope.list = response;
       });
     }
 
     $scope.deleteItem = function(item){
-      itemFactory.delete(item);
-      $state.go($state.current, {}, {reload: true});
+      itemFactory.delete(item).$promise.then(function(response){
+        $scope.list = response;
+      });
     }
 
     $scope.userEqualsOwner = function(){
@@ -33,8 +34,6 @@
       item.purchaser_id = $scope.currentUser.id;
       var temp = {items: item, id: item.id}
       itemFactory.update(temp).$promise.then(function(response){
-        debugger;
-        // response or response.whatever below?
         $scope.list = response;
       });
     }
@@ -42,8 +41,9 @@
     $scope.unpurchase = function(item){
       item.purchaser_id = null;
       var temp = {items: item, id: item.id}
-      itemFactory.update(temp);
-      $state.go($state.current, {}, {reload: true})
+      itemFactory.update(temp).$promise.then(function(response){
+        $scope.list = response;
+      });
     }
   }
 

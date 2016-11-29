@@ -2,12 +2,14 @@
   <h4><span ng-bind="list.user.username"></span>'s list</h4>
   <table style="padding-left: 10px;">
     <tr>
-      <th>item name</th>
+      <th>name</th>
+      <th>price</th>
       <th>external url</th>
       <th ng-if="!userEqualsOwner()">purchaser</th>
     </tr>
     <tr ng-repeat="item in list.items">
       <td ng-bind="item.name"></td>
+      <td>$<span ng-bind="item.price"></span></td>
       <td ng-bind="item.url"></td>
       <td ng-if="!userEqualsOwner()">
         <span ng-if="item.purchaser" ng-bind="item.purchaser.username"></span>
@@ -34,8 +36,10 @@
 <!-- if it's your list -->
 
 <!-- novalidate as attr in below form? -->
-<form ng-if="userEqaulsOwner()" ng-submit="createItem(new_item)">
-  <input value="item name" ng-model="new_item.items.name"></input>
-  <input value="reference url" ng-model="new_item.items.url"></input>
-  <input type="submit" value="add item"></input>
+<!-- ng-if="userEqaulsOwner()"  -->
+<form ng-submit="createItem(new_item)">
+  <input value="name" ng-model="new_item.items.name" placeholder="name" />
+  <input value="price" ng-model="new_item.items.price" placeholder="price" />
+  <input value="url" ng-model="new_item.items.url" placeholder="url" />
+  <input type="submit" value="add item" />
 </form>
