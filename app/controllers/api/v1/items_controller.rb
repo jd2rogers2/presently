@@ -17,7 +17,8 @@ module Api
         if params[:plzrender] == 'list'
           render json: @list
         elsif params[:plzrender].class == Fixnum
-          render User.find_by(id: params[:plzrender])
+          @user = User.find_by(id: params[:plzrender])
+          render json: @user
         else
           render json: @list
         end

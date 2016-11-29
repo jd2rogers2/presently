@@ -19,13 +19,13 @@
     }
 
     $scope.requestFriend = function(new_friend){
-      friendshipFactory.save({friendships: {user_id: $scope.currentUser.id, friend_id: new_friend.id}}).$promise.then(function(response){
+      friendshipFactory.save({plzrender: $scope.currentUser.id, friendships: {user_id: $scope.currentUser.id, friend_id: new_friend.id}}).$promise.then(function(response){
         $scope.currentUser = response;
       });
     }
 
     $scope.unfriend = function(friend){
-      var temp = {id: friend.friendship_id, friendships: {user_id: $scope.currentUser.id, friend_id: friend.id}};
+      var temp = {plzrender: $scope.currentUser.id, id: friend.friendship_id, friendships: {user_id: $scope.currentUser.id, friend_id: friend.id}};
       friendshipFactory.delete(temp).$promise.then(function(response){
         $scope.currentUser = response;
       });

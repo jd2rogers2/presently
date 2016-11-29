@@ -1,5 +1,7 @@
 ----- current -----
 + testing
+back button on item view always goes to item's list
+not good when you're viewing someone else's list
 + delete events
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html

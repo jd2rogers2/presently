@@ -5,7 +5,7 @@ module Api
       
       def create
         @friendship = Friendship.create(friendship_params)
-        @user = User.find_by(id: @friendship.user_id)
+        @user = User.find_by(id: params[:plzrender])
         render json: @user
       end
 
@@ -21,8 +21,8 @@ module Api
 
       def destroy
         set_friendship
-        @user = User.find_by(id: @friendship.user_id)
         @friendship.destroy
+        @user = User.find_by(id: params[:plzrender])
         render json: @user
       end
 

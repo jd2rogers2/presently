@@ -18,7 +18,7 @@
       item.purchaser_id = $scope.currentUser.id;
       var temp = {items: item, id: item.id, plzrender: $scope.viewUser.id}
       itemFactory.update(temp).$promise.then(function(response){
-        $scope.viewUser = response;
+        $scope.viewUser.list.items = response.list.items;
       });
     }
 
@@ -35,9 +35,9 @@
     }
 
     $scope.requestFriend = function(new_friend){
-      var temp = {plzrender: $scope.viewUser.id, friendships: {user_id: $scope.currentUser.id, friend_id: new_friend.id}};
+      var temp = {plzrender: $scope.currentUser.id, friendships: {user_id: $scope.currentUser.id, friend_id: new_friend.id}};
       friendshipFactory.save(temp).$promise.then(function(response){
-        $scope.viewUser = response;
+        $scope.currentUser = response;
       });
     }
 
