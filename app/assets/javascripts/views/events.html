@@ -1,7 +1,7 @@
 <div class="friends-events">
   <h4>friends' events</h4>
   <ul>
-    <li ng-repeat="event in upcomingEvents">
+    <li ng-repeat="event in upcomingEvents | orderBy:'date'">
       <span ng-bind="event.username"></span>'s <span ng-bind="event.name"></span> on <span ng-bind="event.date"></span>
     </li>
   </ul>
@@ -10,7 +10,7 @@
 <div class="my-events">
   <h4>my events</h4>
   <ul>
-    <li ng-repeat="eve in currentUser.events">
+    <li ng-repeat="eve in currentUser.events | orderBy:'date'">
       <span ng-bind="eve.name"></span> on <span ng-bind="eve.date"></span>
     </li>
   </ul>
