@@ -6,20 +6,17 @@
   <li ng-bind="viewUser.bday"></li>
 </ul>
 
-<div id="usersEvents" ng-if="!userEqualsOwner()">
+<div id="usersEvents">
   <h4><span ng-bind="viewUser.username"></span>'s events</h4>
   <ul>
     <li ng-repeat="event in viewUser.events"><span ng-bind="event.name"></span> is on <span ng-bind="event.date"></span></li>
   </ul>
 </div>
 
-
-
-
 <!-- **************** old list page **************** -->
 
 <div class="list">
-  <h4>this is your wish list</h4>
+  <h4><span ng-bind="viewUser.username"></span>'s wish list</h4>
   <table style="padding-left: 10px;">
     <tr>
       <th>name</th>
@@ -27,7 +24,7 @@
       <th>external url</th>
       <th ng-if="!userEqualsOwner()">purchaser</th>
     </tr>
-    <tr ng-repeat="item in list.items">
+    <tr ng-repeat="item in viewUser.list.items">
       <td ng-bind="item.name"></td>
       <td>$<span ng-bind="item.price"></span></td>
       <td ng-bind="item.url"></td>
@@ -35,19 +32,23 @@
         <span ng-if="item.purchaser" ng-bind="item.purchaser.username"></span>
         <span ng-if="currentUser.id == item.purchaser.id"><a href="" ng-click="unpurchase(item)">unpurchase</a></span>
         <span ng-if="!item.purchaser">none - <a href="" ng-click="purchase(item)">purchase</a></span>
-        <span><a ui-sref="listItemShow({list_id: list.id, item_id: item.id})">view</a></span>
+        <span><a ui-sref="listItemShow({list_id: viewUser.list.id, item_id: item.id})">view</a></span>
       </td>
-      <td ng-if="userEqualsOwner()"><a ui-sref="listItemEdit({list_id: list.id, item_id: item.id})">view/edit</a></td>
+      <td ng-if="userEqualsOwner()"><a ui-sref="listItemEdit({list_id: viewUser.list.id, item_id: item.id})">view/edit</a></td>
       <td ng-if="userEqualsOwner()"><a href="" ng-click="deleteItem(item)">delete</a></td>
     </tr>
   </table>
 </div>
 
-<form ng-if="userEqualsOwner()">
-  <input value="name" ng-model="new_item.items.name" placeholder="name" />
-  <input value="price" ng-model="new_item.items.price" placeholder="price" />
-  <input value="url" ng-model="new_item.items.url" placeholder="url" />
-  <input type="submit" value="add item" ng-click="createItem(new_item)" />
-</form>
+<div class="my-friends">
+  <h4><span ng-bind="viewUser.username"></span>'s friends</h4>
+  <ul>
+    <li ng-repeat="friend in viewUser.friends | orderBy:'username'">
+      <a href="" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a> - <a ng-if="alreadyFriend(friend)" href="" ng-click="unfriend(friend)">unfriend</a><a ng-if="!alreadyFriend(friend)" ng-click="requestFriend(friend)"> add friend</a>
+    </li>
+  </ul>
+</div>
+
+
 
 

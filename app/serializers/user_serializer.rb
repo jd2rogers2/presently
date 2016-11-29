@@ -1,6 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
   def list
-    {id: object.list.id, user: {id: object.list.user.id, username: object.list.user.username}}
+    {id: object.list.id, items: object.list.items, user: {id: object.list.user.id, username: object.list.user.username}}
   end
 
   def friends
