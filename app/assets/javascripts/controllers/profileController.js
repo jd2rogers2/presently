@@ -16,17 +16,17 @@
 
     $scope.purchase = function(item){
       item.purchaser_id = $scope.currentUser.id;
-      var temp = {items: item, id: item.id}
+      var temp = {items: item, id: item.id, plzrender: $scope.viewUser.id}
       itemFactory.update(temp).$promise.then(function(response){
-        $scope.list = response;
+        $scope.viewUser = response;
       });
     }
 
     $scope.unpurchase = function(item){
       item.purchaser_id = null;
-      var temp = {items: item, id: item.id}
+      var temp = {items: item, id: item.id, plzrender: $scope.viewUser.id}
       itemFactory.update(temp).$promise.then(function(response){
-        $scope.list = response;
+        $scope.viewUser = response;
       });
     }
 
@@ -35,15 +35,16 @@
     }
 
     $scope.requestFriend = function(new_friend){
-      friendshipFactory.save({friendships: {user_id: $scope.currentUser.id, friend_id: new_friend.id}}).$promise.then(function(response){
-        $scope.currentUser = response;
+      var temp = {plzrender: $scope.viewUser.id, friendships: {user_id: $scope.currentUser.id, friend_id: new_friend.id}};
+      friendshipFactory.save(temp).$promise.then(function(response){
+        $scope.viewUser = response;
       });
     }
 
     $scope.unfriend = function(friend){
-      var temp = {id: friend.friendship_id, friendships: {user_id: $scope.currentUser.id, friend_id: friend.id}};
+      var temp = {id: friend.friendship_id, plzrender: $scope.viewUser.id, friendships: {user_id: $scope.currentUser.id, friend_id: friend.id}};
       friendshipFactory.delete(temp).$promise.then(function(response){
-        $scope.currentUser = response;
+        $scope.viewUser = response;
       });
     }
   }

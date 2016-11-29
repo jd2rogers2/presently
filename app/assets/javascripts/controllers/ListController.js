@@ -9,6 +9,7 @@
     $scope.list = listFactory.get({id: $stateParams.id});
 
     $scope.createItem = function(input){
+      input.plzrender = 'list';
       input.items.list_id = $scope.currentUser.list.id;
       itemFactory.save(input).$promise.then(function(response){
         $scope.list = response;
@@ -16,6 +17,7 @@
     }
 
     $scope.deleteItem = function(item){
+      item.plzrender = 'list';
       itemFactory.delete(item).$promise.then(function(response){
         $scope.list = response;
       });

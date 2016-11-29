@@ -1,10 +1,9 @@
 ----- current -----
++ testing
++ delete events
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
 + edit profile functionality
-+ get rid of all uses of $scope?
-+ view/edit events?
-+ novalidate in forms?
 
 + from item_controller.rb
         # rendering list for when item is purchased on another user's page
@@ -36,6 +35,7 @@
   what kind of app would get me hired?
   examples?
   requirements? (i.e. features of the app)
++ unpurchase button acting really weird on purchases view
 
 
 ----- differences with model app -----

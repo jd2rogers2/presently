@@ -40,11 +40,14 @@
   </table>
 </div>
 
-<div class="my-friends">
+<div class="users-friends">
   <h4><span ng-bind="viewUser.username"></span>'s friends</h4>
   <ul>
     <li ng-repeat="friend in viewUser.friends | orderBy:'username'">
-      <a href="" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a> - <a ng-if="alreadyFriend(friend)" href="" ng-click="unfriend(friend)">unfriend</a><a ng-if="!alreadyFriend(friend)" ng-click="requestFriend(friend)"> add friend</a>
+      <a href="" ng-if="alreadyFriend(friend)" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a>
+      <span ng-if="!alreadyFriend(friend)" ng-bind="friend.username"></span>
+       - <a ng-if="alreadyFriend(friend)" href="" ng-click="unfriend(friend)">unfriend</a>
+      <a ng-if="!alreadyFriend(friend)" href="" ng-click="requestFriend(friend)"> add friend</a>
     </li>
   </ul>
 </div>

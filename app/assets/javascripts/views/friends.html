@@ -1,5 +1,5 @@
 <div class="my-friends">
-  <h4>my friends</h4>
+  <h4>these are your friends</h4>
   <ul>
     <li ng-repeat="friend in currentUser.friends | orderBy:'username'">
       <a href="" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a> - <a href="" ng-click="unfriend(friend)">unfriend</a>

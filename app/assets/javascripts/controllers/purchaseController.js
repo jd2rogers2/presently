@@ -9,11 +9,9 @@
 
     $scope.unpurchase = function(item){
       item.purchaser_id = null;
-      var temp = {items: item, id: item.id}
-      itemFactory.update(temp).$promise.then(function(list){
-        userFactory.get({id: list.user.id}).$promise.then(function(user){
-          $scope.currentUser = user;
-        });
+      var temp = {items: item, id: item.id, plzrender: $scope.currentUser.id}
+      itemFactory.update(temp).$promise.then(function(user){
+        $scope.currentUser = user;
       });
     }
   }
