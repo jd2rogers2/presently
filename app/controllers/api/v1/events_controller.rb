@@ -26,7 +26,6 @@ module Api
       end
 
       def destroy
-        binding.pry
         set_event
         @user = User.find_by(id: @event.user_id)
         @event.destroy
