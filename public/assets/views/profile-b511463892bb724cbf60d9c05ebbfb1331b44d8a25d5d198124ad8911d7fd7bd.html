@@ -1,0 +1,55 @@
+<h4><span ng-bind="viewUser.username"></span>'s profile</h4>
+<ul>
+  <li>user pic</li>
+  <li ng-bind="viewUser.email"></li>
+  <li ng-bind="viewUser.aboutme"></li>
+  <li ng-bind="viewUser.bday"></li>
+</ul>
+
+<div id="usersEvents">
+  <h4><span ng-bind="viewUser.username"></span>'s events</h4>
+  <ul>
+    <li ng-repeat="event in viewUser.events | orderBy:'date'"><span ng-bind="event.name"></span> is on <span ng-bind="event.date"></span></li>
+  </ul>
+</div>
+
+<div class="list">
+  <h4><span ng-bind="viewUser.username"></span>'s wish list</h4>
+  <table style="padding-left: 10px;">
+    <tr>
+      <th>name</th>
+      <th>price</th>
+      <th>notes</th>
+      <th>external url</th>
+      <th ng-if="!userEqualsOwner()">purchaser</th>
+    </tr>
+    <tr ng-repeat="item in viewUser.list.items | orderBy:'name'">
+      <td ng-bind="item.name"></td>
+      <td>$<span ng-bind="item.price"></span></td>
+      <td ng-bind="item.notes"></td>
+      <td ng-bind="item.url"></td>
+      <td ng-if="!userEqualsOwner()">
+        <span ng-if="item.purchaser" ng-bind="item.purchaser.username"></span>
+        <span ng-if="currentUser.id == item.purchaser.id"><a href="" ng-click="unpurchase(item)">unpurchase</a></span>
+        <span ng-if="!item.purchaser">none - <a href="" ng-click="purchase(item)">purchase</a></span>
+        <span><a ui-sref="listItemShow({list_id: viewUser.list.id, item_id: item.id})">view</a></span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="users-friends">
+  <h4><span ng-bind="viewUser.username"></span>'s friends</h4>
+  <ul>
+    <li ng-repeat="friend in viewUser.friends | orderBy:'username'">
+      <a href="" ng-if="alreadyFriend(friend)" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a>
+      <span ng-if="!alreadyFriend(friend)" ng-bind="friend.username"></span>
+      <a ng-if="userEqualsOwner()" href="" ng-click="unfriend(friend)">unfriend</a>
+      <a ng-if="!alreadyFriend(friend)" href="" ng-click="requestFriend(friend)"> add friend</a>
+    </li>
+  </ul>
+</div>
+
+
+
+
