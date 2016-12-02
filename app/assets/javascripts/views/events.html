@@ -24,3 +24,12 @@
     <input type="submit" />
   </form>
 </div>
+
+<div class="friends-events">
+  <h4>testing out component in friends' events</h4>
+  <ul>
+    <li ng-repeat="event in upcomingEvents | orderBy:'date'">
+      <event id="event.id"></event>
+    </li>
+  </ul>
+</div>
