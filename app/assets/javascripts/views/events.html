@@ -2,7 +2,7 @@
   <h4>these are your friends' events</h4>
   <ul>
     <li ng-repeat="event in upcomingEvents | orderBy:'date'">
-      <span ng-bind="event.username"></span>'s <span ng-bind="event.name"></span> on <span ng-bind="event.date"></span>
+      <event name="event.name" username="event.username" date="event.date"></event>
     </li>
   </ul>
 </div>
@@ -11,7 +11,7 @@
   <h4>these are your events</h4>
   <ul>
     <li ng-repeat="eve in currentUser.events | orderBy:'date'">
-      <span ng-bind="eve.name"></span> on <span ng-bind="eve.date"></span><a href="" ng-click="deleteEvent(eve)">delete</a>
+      <event name="eve.name" username="eve.username" date="eve.date"></event>
     </li>
   </ul>
 </div>
@@ -23,13 +23,4 @@
     <input type="date" name="date" ng-model="new_event.date" /><br>
     <input type="submit" />
   </form>
-</div>
-
-<div class="friends-events">
-  <h4>testing out component in friends' events</h4>
-  <ul>
-    <li ng-repeat="event in upcomingEvents | orderBy:'date'">
-      <event id="event.id"></event>
-    </li>
-  </ul>
 </div>

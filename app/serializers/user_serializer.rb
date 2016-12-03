@@ -3,6 +3,12 @@ class UserSerializer < ActiveModel::Serializer
     {id: object.list.id, items: object.list.items, user: {id: object.list.user.id, username: object.list.user.username}}
   end
 
+  def events
+    return object.events.collect do |eve|
+      {id: eve.id, name: eve.name, date: eve.date, user_id: eve.user.id, username: eve.user.username}
+    end
+  end
+
   def friends
     array = object.friends.collect do |fri|
       events_obj = fri.events.collect do |event|
