@@ -37,6 +37,7 @@
   requirements? (i.e. features of the app)
 + unpurchase button acting really weird on purchases view
   go to other user's profile and purchase, then return to their profile and purchase another item
++ in a professional setting, how are components used commonly? how are they different in react?
 
 
 ----- differences with model app -----

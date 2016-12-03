@@ -2,7 +2,7 @@
   <h4>these are your friends' events</h4>
   <ul>
     <li ng-repeat="event in upcomingEvents | orderBy:'date'">
-      <event name="event.name" username="event.username" date="event.date"></event>
+      <event id="event.id" name="event.name" username="event.username" date="event.date"></event>
     </li>
   </ul>
 </div>
@@ -10,8 +10,9 @@
 <div class="my-events">
   <h4>these are your events</h4>
   <ul>
-    <li ng-repeat="eve in currentUser.events | orderBy:'date'">
-      <event name="eve.name" username="eve.username" date="eve.date"></event>
+    <li ng-repeat="event in currentUser.events | orderBy:'date'">
+      <event id="event.id" name="event.name" username="event.username" date="event.date"></event>
+      <a href='' ng-if='event.username == currentUser.username' ng-click='deleteEvent(event)'>delete</a>
     </li>
   </ul>
 </div>
