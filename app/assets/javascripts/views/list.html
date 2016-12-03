@@ -1,3 +1,22 @@
+  <h4>infinite scroll test</h4>
+  <table style="padding-left: 10px;">
+    <tr>
+      <th>name</th>
+      <th>price</th>
+      <th>notes</th>
+      <th>external url</th>
+    </tr>
+    <tr ng-repeat="item in items | orderBy:'name'" list-scroll="loadMore()">
+      <td ng-bind="item.name"></td>
+      <td>$<span ng-bind="item.price"></span></td>
+      <td ng-bind="item.notes"></td>
+      <td ng-bind="item.url"></td>
+      <td><a ui-sref="listItemEdit({list_id: list.id, item_id: item.id})">view/edit</a></td>
+      <td><a href="" ng-click="deleteItem(item)">delete</a></td>
+    </tr>
+  </table>
+
+
 <div class="list">
   <h4>this is your wish list</h4>
   <table style="padding-left: 10px;">
