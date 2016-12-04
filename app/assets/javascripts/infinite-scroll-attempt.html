@@ -1,0 +1,44 @@
+<div list-scroll="loadMore" style="overflow:auto;height:300px;">
+  <ul ng-repeat="item in items | orderBy:'name'">
+    <li>
+      <span ng-bind="item.name"></span>
+      $<span ng-bind="item.price"></span>
+      <span ng-bind="item.notes"></span>
+      <span ng-bind="item.url"></span>
+      <a ui-sref="listItemEdit({list_id: list.id, item_id: item.id})">view/edit</a>
+      <a href="" ng-click="deleteItem(item)">delete</a>
+    </li>
+  </ul>
+</div>
+
+<h4>infinite scroll test</h4>
+<div list-scroll="loadMore()">
+<table style="padding-left: 10px;">
+  <tr>
+    <th>name</th>
+    <th>price</th>
+    <th>notes</th>
+    <th>external url</th>
+  </tr>
+  <tr ng-repeat="item in items | orderBy:'name'">
+    <td ng-bind="item.name"></td>
+    <td>$<span ng-bind="item.price"></span></td>
+    <td ng-bind="item.notes"></td>
+    <td ng-bind="item.url"></td>
+    <td><a ui-sref="listItemEdit({list_id: list.id, item_id: item.id})">view/edit</a></td>
+    <td><a href="" ng-click="deleteItem(item)">delete</a></td>
+  </tr>
+</table>
+</div>
+
+<!-- $scope.loadMore = function(){
+  for (var i = 0; i < 5; i++) {
+    $scope.items.push($scope.list.items[itemsCount]);
+    itemsCount += 1;
+  }
+}
+
+$scope.list = listFactory.get({id: $stateParams.id}).$promise.then(function(response){
+  $scope.items = response.items.slice(0,10);
+});
+http://jsfiddle.net/vojtajina/U7Bz9/ -->

@@ -6,26 +6,15 @@
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
     });
-    var itemsCount = 5;
-    $scope.list = listFactory.get({id: $stateParams.id}).$promise.then(function(response){
-      $scope.items = response.items.slice(0,5);
-    });
-    // $scope.items = $scope.list.items.slice(0,5);
-    
-    $scope.loadMore = function(){
-      debugger;
-      for (var i = 0; i < 5; i++) {
-        $scope.items.push($scope.list.items[itemsCount]);
-        itemsCount + 1;
-      }
-    }
-
+    $scope.itemsCounter = 0;
+    $scope.list = listFactory.get({id: $stateParams.id});
+    $scope.items = [];
 
     $scope.createItem = function(input){
       input.plzrender = 'list';
       input.items.list_id = $scope.currentUser.list.id;
       itemFactory.save(input).$promise.then(function(response){
-        $scope.fullList = response;
+        $scope.list = response;
       });
     }
 
@@ -35,6 +24,23 @@
         $scope.list = response;
       });
     }
+
+    $scope.disableInfinite = false;
+
+    $scope.loadMore = function(){
+      for (var i = 0; i < 10; i++) {
+        $scope.items.push($scope.list.items[$scope.itemsCounter]);
+        $scope.itemsCounter += 1;
+        if ($scope.itemsCounter == $scope.list.items.count) {
+          $scope.disableInfinite = true;
+        }
+      }
+    }
+
+    $scope.list.$promise.then(function(response){
+      $scope.loadMore();
+      $scope.itemsCount = response.items.count;
+    });
   }
 
   listController.$inject = ['$scope', 'Auth', '$stateParams', 'itemFactory', 'listFactory']

@@ -14,6 +14,7 @@
 //= require angular
 //= require angular-devise
 //= require angular-messages
+//= require ngInfiniteScroll
 //= require angular-ui-router
 //= require angular-resource
 //= require bootstrap-sprockets
