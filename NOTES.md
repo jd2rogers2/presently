@@ -14,6 +14,7 @@
 + google calendar api
 + delete your account
   users on destroy deletes list and items
++ ngAnimate
 
 
 ----- questions -----
@@ -28,3 +29,4 @@
 + unpurchase button acting really weird on purchases view
   go to other user's profile and purchase, then return to their profile and purchase another item
 + in a professional setting, how are components used commonly? how are they different in react?
++ everyone else made a recipe app (and seeded recipes from an api), is that what get's people hired?

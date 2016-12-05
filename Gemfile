@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'paperclip'
 gem 'bower-rails', '~> 0.11.0'
 # added version per research due to rails g bower_rails:initialize json error
 # gem 'bower-rails'
