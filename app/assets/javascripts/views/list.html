@@ -12,6 +12,7 @@
   <h4>this is your wish list</h4>
   <table class="table table-striped">
     <tr>
+      <th></th>
       <th>name</th>
       <th>price</th>
       <th>notes</th>
@@ -21,6 +22,7 @@
     </tr>
     <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite" infinite-scroll-distance="0">
       <tr ng-repeat="item in items | orderBy:'id' track by $index">
+        <td><img src="{{item.image}}" class="mini-img img-rounded"></td>
         <td ng-bind="item.name"></td>
         <td>$<span ng-bind="item.price"></span></td>
         <td ng-bind="item.notes"></td>

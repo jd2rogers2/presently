@@ -1,8 +1,7 @@
 <a href="" ui-sref="list({id: item.list.id})"><< my list</a>
 <br>
 <br>
-item pic <br>
-item pic <br>
+<img src="{{item.image}}" class="show-img img-rounded"> <br>
 <form ng-submit="update()">
   name:<input type="text" ng-model="item.name" placeholder="{{item.name}}" /><br>
   $<input type="text" ng-model="item.price" placeholder="{{item.price}}" /><br>

@@ -4,7 +4,8 @@
       <h4>these are your friends</h4>
       <ul class="list-unstyled">
         <li ng-repeat="friend in currentUser.friends | orderBy:'username'">
-          user profile pic -- <a href="" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a> - <a href="" ng-click="unfriend(friend)">unfriend</a>
+          <img src="{{friend.image}}" class="mini-img img-circle">
+          <a href="" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a> - <a href="" ng-click="unfriend(friend)">unfriend</a>
         </li>
       </ul>
     </div>
@@ -19,7 +20,7 @@
       </form>
       <table>
         <tr ng-repeat="user in searchedUsers | orderBy:'username'">
-          <td>user profile pic -- </td>
+          <td><img src="{{user.image}}" class="mini-img img-circle"></td>
           <td><span ng-bind="user.username"></span></td>
           <td ng-if="!alreadyFriend(user)"><button ng-click="requestFriend(user)"> send friend request</button></td>
         </tr>

@@ -17,7 +17,7 @@ class UserSerializer < ActiveModel::Serializer
       events_obj = fri.events.collect do |event|
         {id: event.id, name: event.name, date: event.date, username: event.user.username}
       end  
-      {id: fri.id, username: fri.username, aboutme: fri.aboutme, email: fri.email, friendship_id: Friendship.find_by(user_id: object.id, friend_id: fri.id).id, list: {id: fri.list.id}, events: events_obj}
+      {id: fri.id, image: fri.image, username: fri.username, aboutme: fri.aboutme, email: fri.email, friendship_id: Friendship.find_by(user_id: object.id, friend_id: fri.id).id, list: {id: fri.list.id}, events: events_obj}
     end
     return array.uniq
   end

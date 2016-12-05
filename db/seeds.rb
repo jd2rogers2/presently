@@ -24,7 +24,7 @@ end
   Item.create(name: string + num.to_s + num.to_s, list_id: num, purchaser_id: User.find_by(username: 'show_user').id, url: 'www.url.com', notes: "for f's sake, please!", price: num * 10)
 end
 
-1000.times do |i|
+500.times do |i|
   num = i + 1
   string = 'infinite_scroll item # ' + num.to_s
   Item.create(name: string, list_id: 101, purchaser_id: nil, url: 'www.url.com', notes: string + ' notes', price: num * 10)
