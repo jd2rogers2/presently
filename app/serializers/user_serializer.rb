@@ -19,7 +19,7 @@ class UserSerializer < ActiveModel::Serializer
     return array.uniq
   end
 
-  attributes :id, :username, :events, :bday, :aboutme, :email, :list, :friends
+  attributes :id, :username, :events, :bday, :aboutme, :email, :list, :friends, :image
   has_many :purchases, serializer: ItemSerializer
   # has_many :friends, serializer: UserSerializer
 end
