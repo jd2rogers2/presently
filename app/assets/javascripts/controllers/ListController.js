@@ -39,7 +39,6 @@
 
     $scope.list.$promise.then(function(response){
       $scope.loadMore();
-      $scope.itemsCount = response.items.count;
     });
   }
 

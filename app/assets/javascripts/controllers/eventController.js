@@ -5,12 +5,13 @@
     var eventCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
-      $scope.upcomingEvents = [];
+      $scope.allEvents = [];
       $scope.currentUser.friends.forEach(function(friend){
         friend.events.forEach(function(event){
-          $scope.upcomingEvents.push(event);
+          $scope.allEvents.push(event);
         })
       })
+      $scope.loadMore();
     });
 
     $scope.createEvent = function(){
@@ -27,25 +28,20 @@
       })
     }
 
-    $scope.itemsCounter = 0;
-    $scope.list = listFactory.get({id: $stateParams.id});
-    $scope.items = [];
+    $scope.eventsCounter = 0;
+    $scope.showEvents = [];
     $scope.disableInfinite = false;
 
     $scope.loadMore = function(){
       for (var i = 0; i < 10; i++) {
-        $scope.items.push($scope.list.items[$scope.itemsCounter]);
-        $scope.itemsCounter += 1;
-        if ($scope.itemsCounter >= $scope.list.items.length) {
+        // debugger;
+        $scope.showEvents.push($scope.allEvents[$scope.eventsCounter]);
+        $scope.eventsCounter += 1;
+        if ($scope.eventsCounter >= $scope.allEvents.length) {
           $scope.disableInfinite = true;
         }
       }
     }
-
-    $scope.list.$promise.then(function(response){
-      $scope.loadMore();
-      $scope.itemsCount = response.items.count;
-    });
 
   }
 

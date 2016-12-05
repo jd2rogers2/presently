@@ -20,11 +20,10 @@
 <div class="friends-events">
   <h4>these are your friends' events</h4>
   <ul>
-    <li ng-repeat="event in upcomingEvents | orderBy:'date'">
-      <event id="event.id" name="event.name" username="event.username" date="event.date"></event>
-    </li>
+    <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite" infinite-scroll-distance="0">
+      <li ng-repeat="event in showEvents | orderBy:'date' track by $index">
+        <event id="event.id" name="event.name" username="event.username" date="event.date"></event>
+      </li>
+    </div>
   </ul>
 </div>
-
-<!-- <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite" infinite-scroll-distance="0">
-      <tr ng-repeat="item in items | orderBy:'id' track by $index"> -->
