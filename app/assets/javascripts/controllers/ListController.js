@@ -31,7 +31,7 @@
       for (var i = 0; i < 10; i++) {
         $scope.items.push($scope.list.items[$scope.itemsCounter]);
         $scope.itemsCounter += 1;
-        if ($scope.itemsCounter == $scope.list.items.count) {
+        if ($scope.itemsCounter >= $scope.list.items.length) {
           $scope.disableInfinite = true;
         }
       }

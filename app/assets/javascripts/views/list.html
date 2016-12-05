@@ -35,7 +35,7 @@
       <th>notes</th>
       <th>external url</th>
     </tr>
-    <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite">
+    <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite" infinite-scroll-distance=".5">
       <!--  infinite-scroll-distance="2" -->
       <tr ng-repeat="item in items | orderBy:'id' track by $index">
         <td ng-bind="item.name"></td>
