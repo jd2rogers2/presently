@@ -1,9 +1,11 @@
-<a ng-if="currentUser.list.id == item.list.id" href="" ui-sref="list({id: item.list.id})"><< my list</a>
-<a ng-if="currentUser.list.id != item.list.id" href="" ui-sref="userProfile({id: item.list.user_id})"><< user's profile</a>
-<br>
-<br>
-<img src="{{item.image}}" class="show-img img-rounded"> <br>
-name: <span ng-bind="item.name"></span><br>
-$ <span ng-bind="item.price"></span><br>
-url: <span ng-bind="item.url"></span><br>
-notes: <span ng-bind="item.notes"></span><br>
+<div class="well">
+  <a ng-if="currentUser.list.id == item.list.id" href="" ui-sref="list({id: item.list.id})"><< my list</a>
+  <a ng-if="currentUser.list.id != item.list.id" href="" ui-sref="userProfile({id: item.list.user_id})"><< user's profile</a>
+  <br>
+  <br>
+  <img src="{{item.image}}" class="show-img img-rounded"> <br>
+  name: <span ng-bind="item.name"></span><br>
+  $ <span ng-bind="item.price"></span><br>
+  url: <span ng-bind="item.url"></span><br>
+  notes: <span ng-bind="item.notes"></span><br>
+</div>
