@@ -6,7 +6,7 @@
   <input type="submit" value="add item" />
 </form>
 
-<!-- <div class="list">
+<div class="list">
   <h4>this is your wish list</h4>
   <table style="padding-left: 10px;">
     <tr>
@@ -15,28 +15,7 @@
       <th>notes</th>
       <th>external url</th>
     </tr>
-    <tr ng-repeat="item in list.items | orderBy:'-id'">
-      <td ng-bind="item.name"></td>
-      <td>$<span ng-bind="item.price"></span></td>
-      <td ng-bind="item.notes"></td>
-      <td ng-bind="item.url"></td>
-      <td><a ui-sref="listItemEdit({list_id: list.id, item_id: item.id})">view/edit</a></td>
-      <td><a href="" ng-click="deleteItem(item)">delete</a></td>
-    </tr>
-  </table>
-</div> -->
-
-<div class="list">
-  <h4>infinite scroll test</h4>
-  <table style="padding-left: 10px;">
-    <tr>
-      <th>name</th>
-      <th>price</th>
-      <th>notes</th>
-      <th>external url</th>
-    </tr>
-    <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite" infinite-scroll-distance=".5">
-      <!--  infinite-scroll-distance="2" -->
+    <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite" infinite-scroll-distance="0">
       <tr ng-repeat="item in items | orderBy:'id' track by $index">
         <td ng-bind="item.name"></td>
         <td>$<span ng-bind="item.price"></span></td>
