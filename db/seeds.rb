@@ -29,3 +29,6 @@ end
 User.all.each do |x|
   Friendship.create(user_id: User.find_by(username: 'infinite_scroll').id, friend_id: x.id)
 end
+
+# notes for final seed
+# don't be friends with everyone but have a lot

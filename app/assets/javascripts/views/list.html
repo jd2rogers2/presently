@@ -1,19 +1,23 @@
-<form ng-submit="createItem(new_item)">
-  <input type="text" value="name" ng-model="new_item.items.name" placeholder="name" />
-  <input type="number" value="0" ng-model="new_item.items.price" placeholder="price" />
-  <input type="text" value="notes" ng-model="new_item.items.notes" placeholder="notes" />
-  <input type="url" value="url" ng-model="new_item.items.url" placeholder="url" />
-  <input type="submit" value="add item" />
-</form>
+<div class="well">
+  <form ng-submit="createItem(new_item)">
+    <input type="text" value="name" ng-model="new_item.items.name" placeholder="name" />
+    <input type="number" value="0" ng-model="new_item.items.price" placeholder="price" />
+    <input type="text" value="notes" ng-model="new_item.items.notes" placeholder="notes" />
+    <input type="url" value="url" ng-model="new_item.items.url" placeholder="url" />
+    <input type="submit" value="add item" />
+  </form>
+</div>
 
-<div class="list">
+<div class="list well">
   <h4>this is your wish list</h4>
-  <table style="padding-left: 10px;">
+  <table class="table table-striped">
     <tr>
       <th>name</th>
       <th>price</th>
       <th>notes</th>
       <th>external url</th>
+      <th></th>
+      <th></th>
     </tr>
     <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite" infinite-scroll-distance="0">
       <tr ng-repeat="item in items | orderBy:'id' track by $index">

@@ -1,29 +1,34 @@
-<div class="create-event">
-  create a new event <br>
-  <form ng-submit="createEvent()">
-    <input type="text" name="name" placeholder="name" ng-model="new_event.name" /><br>
-    <input type="date" name="date" ng-model="new_event.date" /><br>
-    <input type="submit" />
-  </form>
-</div>
-
-<div class="my-events">
-  <h4>these are your events</h4>
-  <ul>
-    <li ng-repeat="event in currentUser.events | orderBy:'date'">
-      <event id="event.id" name="event.name" username="event.username" date="event.date"></event>
-      <a href='' ng-if='event.username == currentUser.username' ng-click='deleteEvent(event)'>delete</a>
-    </li>
-  </ul>
-</div>
-
-<div class="friends-events">
-  <h4>these are your friends' events</h4>
-  <ul>
-    <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite" infinite-scroll-distance="0">
-      <li ng-repeat="event in showEvents | orderBy:'date' track by $index">
-        <event id="event.id" name="event.name" username="event.username" date="event.date"></event>
-      </li>
+<div class="row">
+  <div class="col col-md-6 well">
+    <div class="create-event">
+      <form ng-submit="createEvent()">
+        <input type="text" name="name" placeholder="name" ng-model="new_event.name" />
+        <input type="date" name="date" ng-model="new_event.date" />
+        <input type="submit" value="add event" />
+      </form>
     </div>
-  </ul>
+
+    <div class="my-events">
+      <h4>these are your events</h4>
+      <ul class="list-unstyled">
+        <li ng-repeat="event in currentUser.events | orderBy:'date'">
+          <event id="event.id" name="event.name" username="event.username" date="event.date"></event>
+          <a href='' ng-if='event.username == currentUser.username' ng-click='deleteEvent(event)'>delete</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col col-md-6 well">
+    <div class="friends-events">
+      <h4>these are your friends' events</h4>
+      <ul class="list-unstyled">
+        <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite" infinite-scroll-distance="0">
+          <li ng-repeat="event in showEvents | orderBy:'date' track by $index">
+            <event id="event.id" name="event.name" username="event.username" date="event.date"></event>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
 </div>

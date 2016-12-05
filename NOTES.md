@@ -1,16 +1,7 @@
 ----- current -----
-+ how to push to heroku vid
 + can upload pics for items and users
   http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
 + edit profile functionality
-+ login error messages
-
-+ from item_controller.rb
-        # rendering list for when item is purchased on another user's page
-        # and from item edit page autoredirect back to list
-        # unpurchase button from purcahses page is redirecting
-        # to your list because we could only render list if we passed 
-        # a key in params and made an if statement here
 
 
 ----- issues -----
@@ -25,7 +16,6 @@
   users on destroy deletes list and items
 
 
-
 ----- questions -----
 + line 6 app controller.rb, skip needed/wanted?
 + .run in app.js, how does this work?
@@ -38,10 +28,3 @@
 + unpurchase button acting really weird on purchases view
   go to other user's profile and purchase, then return to their profile and purchase another item
 + in a professional setting, how are components used commonly? how are they different in react?
-
-
------ differences with model app -----
-# in applicationController.rb  
-  def default_serializer_options
-    {root: false}
-  end 
