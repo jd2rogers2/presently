@@ -8,7 +8,6 @@
     });
     userFactory.get({id: $stateParams.id}).$promise.then(function(user){
       $scope.viewUser = user;
-      debugger;
     })
 
     $scope.userEqualsOwner = function(){

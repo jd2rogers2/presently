@@ -26,7 +26,8 @@ module Api
 
       def show
         set_item
-        render json: @item.to_json(include: [:purchaser, list: {include: :user}])
+        render json: @item
+        # .to_json(include: [:purchaser, list: {include: :user}])
       end
 
       def index

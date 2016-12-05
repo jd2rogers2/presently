@@ -1,6 +1,9 @@
 class UserSerializer < ActiveModel::Serializer
   def list
-    {id: object.list.id, items: object.list.items, user: {id: object.list.user.id, username: object.list.user.username}}
+    items = object.list.items.collect do |item|
+      {id: item.id, name: item.name, url: item.url, purchaser_id: item.purchaser_id, list_id: item.list_id, notes: item.notes, price: item.price, image: item.image}
+    end
+    {id: object.list.id, items: items, user: {id: object.list.user.id, username: object.list.user.username}}
   end
 
   def events
