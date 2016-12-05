@@ -11,7 +11,6 @@ module Api
       end
 
       def update
-        binding.pry
         set_item
         @item.update(item_params)
         @list = List.find_by(id: @item.list_id)
@@ -21,7 +20,7 @@ module Api
           @user = User.find_by(id: params[:plzrender])
           render json: @user
         else
-          render json: @list
+          render json: @item
         end
       end
 

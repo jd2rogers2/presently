@@ -6,12 +6,12 @@
     $scope.item = itemFactory.get({id: $stateParams.item_id}); 
 
     $scope.update = function(){
+      var temp = {plzrender: 'item', items: $scope.item, id: $stateParams.item_id};
+      itemFactory.update(temp);
       if ($scope.image) {
         $scope.upload($scope.image);
       }
-      var temp = {plzrender: 'list', items: $scope.item, id: $stateParams.item_id};
-      itemFactory.update(temp);
-      $state.go('list', {id: $scope.item.list.id});
+      $state.go('listItemShow', {list_id: $scope.item.list.id, item_id: $scope.item.id});
     }
 
     $scope.upload = function(file){
@@ -21,13 +21,9 @@
         headers: { 'Content-Type': false },
         data: {items: {image: file}},
         sendFieldsAs: 'json'
-        // data: {file: file, 'username': $scope.username}
-        // from ngFileUpload docs
       }).then(function(response){
-        debugger;
         // success
-      }, function(response, a, b, c){
-        debugger;
+      }, function(response){
         // fail
       });
     }
