@@ -15,15 +15,15 @@
 
     $scope.createEvent = function(){
       var temp = {events: {name: $scope.new_event.name, date: $scope.new_event.date, user_id: $scope.currentUser.id}};
-      eventFactory.save(temp).$promise.then(function(response){
-        $scope.currentUser.events = response.events;
+      eventFactory.save(temp).then(function(response){
+        $scope.currentUser.events = response.data.events;
       });
     }
 
     $scope.deleteEvent = function(event){
       var temp = {id: event.id, events: event}
-      eventFactory.delete(temp).$promise.then(function(response){
-        $scope.currentUser.events = response.events;
+      eventFactory.delete(temp).then(function(response){
+        $scope.currentUser.events = response.data.events;
       })
     }
   }

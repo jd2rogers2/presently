@@ -1,13 +1,23 @@
 (function(){
   'use strict';
 
-  function listFactory($resource){
-    return $resource('/api/v1/lists/:id.json', {id: '@id'}, {
-      "update": {method: "PUT"}
-    });
+  function listFactory($http){
+    this.get = function(data){
+      var url = '/api/v1/lists/' + data.id + '.json';
+      return $http({
+        url: url,
+        method: 'GET',
+        // method: 'jsonp'
+        data: data
+      });
+    }
+    
+    return {
+      get: this.get
+    }
   }
 
-  listFactory.$inject = ['$resource']
+  listFactory.$inject = ['$http']
 
   angular
     .module('app')

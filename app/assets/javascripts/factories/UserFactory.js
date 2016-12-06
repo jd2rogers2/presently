@@ -1,13 +1,32 @@
 (function(){
   'use strict';
 
-  function userFactory($resource){
-    return $resource('/api/v1/users/:id.json', {id: '@id'}, {
-      "update": {method: "PUT"}
-    });
+  function userFactory($http){
+    this.get = function(data){
+      var url = '/api/v1/users/' + data.id + '.json';
+      return $http({
+        url: url,
+        method: 'GET',
+        data: data
+        // {users: data} maybe?
+      });
+    }
+
+    this.query = function(data){
+      var url = '/api/v1/users.json';
+      return $http({
+        url: url,
+        method: 'GET'
+      });
+    }
+
+    return {
+      get: this.get,
+      query: this.query
+    }
   }
 
-  userFactory.$inject = ['$resource']
+  userFactory.$inject = ['$http']
 
   angular
     .module('app')

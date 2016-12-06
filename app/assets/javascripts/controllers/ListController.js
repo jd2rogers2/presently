@@ -6,20 +6,32 @@
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
     });
-    $scope.list = listFactory.get({id: $stateParams.id});
+
+    $scope.simRank = function(list){
+      var counter = 1;
+      list.items.forEach(function(item){
+        item.rank = counter;
+        counter++;
+      });
+    }
+
+    listFactory.get({id: $stateParams.id}).then(function(response){
+      $scope.list = response.data;
+      $scope.simRank($scope.list);
+    });
 
     $scope.createItem = function(input){
       input.plzrender = 'list';
       input.items.list_id = $scope.currentUser.list.id;
-      itemFactory.save(input).$promise.then(function(response){
-        $scope.list = response;
+      itemFactory.save(input).then(function(response){
+        $scope.list = response.data;
       });
     }
 
     $scope.deleteItem = function(item){
       item.plzrender = 'list';
-      itemFactory.delete(item).$promise.then(function(response){
-        $scope.list = response;
+      itemFactory.delete(item).then(function(response){
+        $scope.list = response.data;
       });
     }
   }

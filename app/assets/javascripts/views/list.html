@@ -2,23 +2,29 @@
   <h4>this is your wish list</h4>
   <table style="padding-left: 10px;">
     <tr>
+      <th>rank</th>
       <th>name</th>
       <th>price</th>
       <th>notes</th>
       <th>external url</th>
+      <th>change rank</th>
     </tr>
-    <tr ng-repeat="item in list.items | orderBy:'name'">
+    <tr ng-repeat="item in list.items | orderBy:'rank'">
+      <td ng-bind="item.rank"></td>
       <td ng-bind="item.name"></td>
       <td>$<span ng-bind="item.price"></span></td>
       <td ng-bind="item.notes"></td>
       <td ng-bind="item.url"></td>
       <td><a ui-sref="listItemEdit({list_id: list.id, item_id: item.id})">view/edit</a></td>
       <td><a href="" ng-click="deleteItem(item)">delete</a></td>
+      <td><input type="number" ng-model="item.rank" /></td>
+      <!--  ng-model="item.rank" -->
     </tr>
   </table>
 </div>
 
 <form ng-submit="createItem(new_item)">
+  <input type="number" value="rank" ng-model="new_item.items.rank" placeholder="rank" />
   <input type="text" value="name" ng-model="new_item.items.name" placeholder="name" />
   <input type="number" value="0" ng-model="new_item.items.price" placeholder="price" />
   <input type="text" value="notes" ng-model="new_item.items.notes" placeholder="notes" />
