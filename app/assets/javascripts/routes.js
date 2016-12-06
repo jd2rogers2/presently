@@ -48,6 +48,16 @@
             }
           }
         })
+        .state('userProfileEdit', {
+          url: '/users/:id/edit',
+          templateUrl: 'views/editProfile.html',
+          controller: 'editProfileController as editProfCtrl',
+          onEnter: function($state, Auth){
+            if (!Auth._currentUser){
+              $state.go('login')
+            }
+          }
+        })
 
       $stateProvider
         .state('userFriends', {

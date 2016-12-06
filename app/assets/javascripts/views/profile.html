@@ -8,6 +8,7 @@
         <li ng-bind="viewUser.aboutme"></li>
         <li ng-bind="viewUser.bday"></li>
       </ul>
+      <button ng-if="userEqualsOwner()" ui-sref="userProfileEdit({id: currentUser.id})">edit profile</button>
     </div>
 
     <div class="col col-md-6">

@@ -13,13 +13,19 @@ module Api
         render json: @users
       end
 
+      def update
+        set_user
+        @user.update(user_params)
+        render json: @user
+      end
+
       private
       def set_user
         @user = User.find_by(id: params[:id])
       end
 
       def user_params
-        params.require(:users).permit(:id, :username, :password, :bday, :aboutme, :image)
+        params.require(:users).permit(:id, :username, :password, :bday, :aboutme, :image, :email)
       end
     end
   end
