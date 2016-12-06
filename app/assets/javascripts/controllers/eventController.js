@@ -34,7 +34,6 @@
 
     $scope.loadMore = function(){
       for (var i = 0; i < 10; i++) {
-        // debugger;
         $scope.showEvents.push($scope.allEvents[$scope.eventsCounter]);
         $scope.eventsCounter += 1;
         if ($scope.eventsCounter >= $scope.allEvents.length) {

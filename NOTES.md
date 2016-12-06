@@ -1,7 +1,4 @@
 ----- current -----
-+ can upload pics for items and users
-  http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
-+ edit profile functionality
 
 
 ----- issues -----
@@ -18,6 +15,8 @@
 
 
 ----- questions -----
++ already pushed to heroku
+  would it be faster on heroku?
 + line 6 app controller.rb, skip needed/wanted?
 + .run in app.js, how does this work?
 + why activate vs resolve?
