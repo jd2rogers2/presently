@@ -33,6 +33,7 @@
         $scope.itemsCounter += 1;
         if ($scope.itemsCounter >= $scope.list.items.length) {
           $scope.disableInfinite = true;
+          break;
         }
       }
     }

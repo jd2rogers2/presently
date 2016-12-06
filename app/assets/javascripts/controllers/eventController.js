@@ -39,6 +39,7 @@
         $scope.eventsCounter += 1;
         if ($scope.eventsCounter >= $scope.allEvents.length) {
           $scope.disableInfinite = true;
+          break;
         }
       }
     }
