@@ -1,13 +1,15 @@
-<a href="" ui-sref="list({id: item.list.id})"><< my list</a>
-<br>
-<br>
-item pic <br>
-item pic <br>
-<form ng-submit="update()">
-  name:<input type="text" ng-model="item.name" placeholder="{{item.name}}" /><br>
-  $<input type="text" ng-model="item.price" placeholder="{{item.price}}" /><br>
-  url:<input type="text" ng-model="item.url" placeholder="{{item.url}}" /><br>
-  notes:<input type="text" ng-model="item.notes" placeholder="{{item.notes}}" /><br>
-  <input type="submit" value="edit item" />
-</form>
-<br>
+<div class="well">
+  <a href="" ui-sref="list({id: item.list.id})"><< my list</a>
+  <br>
+  <br>
+  <img src="{{item.image}}" class="show-img img-rounded"> <br>
+  <form ng-submit="update()">
+    update image:<input type="file" ng-model="image" ngf-pattern="'image/*'" accept="image/*" ngf-max-size="20MB" ngf-min-height="100" ngf-select />
+    name:<input type="text" ng-model="item.name" placeholder="{{item.name}}" /><br>
+    $<input type="text" ng-model="item.price" placeholder="{{item.price}}" /><br>
+    url:<input type="text" ng-model="item.url" placeholder="{{item.url}}" /><br>
+    notes:<input type="text" ng-model="item.notes" placeholder="{{item.notes}}" /><br>
+    <input type="submit" value="edit item" />
+  </form>
+  <br>
+</div>

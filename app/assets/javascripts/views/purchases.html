@@ -1,9 +1,8 @@
-<div class="my-purchases">
+<div class="my-purchases well">
   <h4>this is your shopping list</h4>
-  <ul>
+  <ul class="list-unstyled">
     <li ng-repeat="purchase in currentUser.purchases | orderBy:'name'">
-      buying <a ui-sref="listItemShow({item_id: purchase.id, list_id: purchase.list.id})" ng-bind="purchase.name"></a>
-      for <a ui-sref="userProfile({id: purchase.list.id})" ng-bind="purchase.list.username"></a> - <a href="" ng-click="unpurchase(purchase)">unpurchase</a>
+      <purchase obj="purchase"></purchase><a href="" ng-click="unpurchase(purchase)">unpurchase</a>
     </li>
   </ul>
 </div>

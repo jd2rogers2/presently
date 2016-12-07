@@ -1,23 +1,30 @@
-<div class="my-friends">
-  <h4>these are your friends</h4>
-  <ul>
-    <li ng-repeat="friend in currentUser.friends | orderBy:'username'">
-      <a href="" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a> - <a href="" ng-click="unfriend(friend)">unfriend</a>
-    </li>
-  </ul>
-</div>
+<div class="row">
+  <div class="col col-md-6 well">
+    <div class="my-friends">
+      <h4>these are your friends</h4>
+      <ul class="list-unstyled">
+        <li ng-repeat="friend in currentUser.friends | orderBy:'username'">
+          <img src="{{friend.image}}" class="mini-img img-circle">
+          <a href="" ui-sref="userProfile({id: friend.id})" ng-bind="friend.username"></a> - <a href="" ng-click="unfriend(friend)">unfriend</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-<div class="search-friends">
-  <h4>search users</h4>
-  <form ng-submit="userSearch()">
-    <input type="text" placeholder="by username" ng-model="searchCriteria">
-    <input type="submit">
-  </form>
-  <table>
-    <tr ng-repeat="user in searchedUsers | orderBy:'username'">
-      <td>user profile pic -- </td>
-      <td><span ng-bind="user.username"></span></td>
-      <td ng-if="!alreadyFriend(user)"><button ng-click="requestFriend(user)"> send friend request</button></td>
-    </tr>
-  </table>
+  <div class="col col-md-6 well">
+    <div class="search-friends">
+      <h4>search users</h4>
+      <form ng-submit="userSearch()">
+        <input type="text" placeholder="by username" ng-model="searchCriteria">
+        <input type="submit">
+      </form>
+      <table>
+        <tr ng-repeat="user in searchedUsers | orderBy:'username'">
+          <td><img src="{{user.image}}" class="mini-img img-circle"></td>
+          <td><span ng-bind="user.username"></span></td>
+          <td ng-if="!alreadyFriend(user)"><button ng-click="requestFriend(user)"> send friend request</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>

@@ -6,19 +6,9 @@
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
     });
-
-    $scope.simRank = function(list){
-      var counter = 1;
-      list.items.forEach(function(item){
-        item.rank = counter;
-        counter++;
-      });
-    }
-
-    listFactory.get({id: $stateParams.id}).then(function(response){
-      $scope.list = response.data;
-      $scope.simRank($scope.list);
-    });
+    $scope.itemsCounter = 0;
+    $scope.list = listFactory.get({id: $stateParams.id});
+    $scope.items = [];
 
     $scope.createItem = function(input){
       input.plzrender = 'list';
@@ -34,6 +24,23 @@
         $scope.list = response.data;
       });
     }
+
+    $scope.disableInfinite = false;
+
+    $scope.loadMore = function(){
+      for (var i = 0; i < 10; i++) {
+        $scope.items.push($scope.list.items[$scope.itemsCounter]);
+        $scope.itemsCounter += 1;
+        if ($scope.itemsCounter >= $scope.list.items.length) {
+          $scope.disableInfinite = true;
+          break;
+        }
+      }
+    }
+
+    $scope.list.$promise.then(function(response){
+      $scope.loadMore();
+    });
   }
 
   listController.$inject = ['$scope', 'Auth', '$stateParams', 'itemFactory', 'listFactory']

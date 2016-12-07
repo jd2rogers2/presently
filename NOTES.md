@@ -1,18 +1,6 @@
 use $http
 
 ----- current -----
-+ how to push to heroku vid
-+ can upload pics for items and users
-  http://alessandrosantamaria.blogspot.com/2015/11/file-upload-in-angularjs-with-ng-file.html
-+ edit profile functionality
-+ login error messages
-
-+ from item_controller.rb
-        # rendering list for when item is purchased on another user's page
-        # and from item edit page autoredirect back to list
-        # unpurchase button from purcahses page is redirecting
-        # to your list because we could only render list if we passed 
-        # a key in params and made an if statement here
 
 
 ----- issues -----
@@ -25,10 +13,12 @@ use $http
 + google calendar api
 + delete your account
   users on destroy deletes list and items
-
++ ngAnimate
 
 
 ----- questions -----
++ already pushed to heroku
+  would it be faster on heroku?
 + line 6 app controller.rb, skip needed/wanted?
 + .run in app.js, how does this work?
 + why activate vs resolve?
@@ -39,10 +29,5 @@ use $http
   requirements? (i.e. features of the app)
 + unpurchase button acting really weird on purchases view
   go to other user's profile and purchase, then return to their profile and purchase another item
-
-
------ differences with model app -----
-# in applicationController.rb  
-  def default_serializer_options
-    {root: false}
-  end 
++ in a professional setting, how are components used commonly? how are they different in react?
++ everyone else made a recipe app (and seeded recipes from an api), is that what get's people hired?

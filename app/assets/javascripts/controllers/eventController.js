@@ -5,12 +5,13 @@
     var eventCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
-      $scope.upcomingEvents = [];
+      $scope.allEvents = [];
       $scope.currentUser.friends.forEach(function(friend){
         friend.events.forEach(function(event){
-          $scope.upcomingEvents.push(event);
+          $scope.allEvents.push(event);
         })
       })
+      $scope.loadMore();
     });
 
     $scope.createEvent = function(){
@@ -26,6 +27,22 @@
         $scope.currentUser.events = response.data.events;
       })
     }
+
+    $scope.eventsCounter = 0;
+    $scope.showEvents = [];
+    $scope.disableInfinite = false;
+
+    $scope.loadMore = function(){
+      for (var i = 0; i < 10; i++) {
+        $scope.showEvents.push($scope.allEvents[$scope.eventsCounter]);
+        $scope.eventsCounter += 1;
+        if ($scope.eventsCounter >= $scope.allEvents.length) {
+          $scope.disableInfinite = true;
+          break;
+        }
+      }
+    }
+
   }
 
   eventController.$inject =['$scope', '$state', 'Auth', 'eventFactory']

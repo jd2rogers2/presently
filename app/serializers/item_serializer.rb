@@ -6,5 +6,5 @@ class ItemSerializer < ActiveModel::Serializer
     }
   end
 
-  attributes :id, :name, :url, :list, :purchaser, :price, :notes
+  attributes :id, :name, :url, :list, :purchaser, :price, :notes, :image
 end

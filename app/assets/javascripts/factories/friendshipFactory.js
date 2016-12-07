@@ -2,7 +2,6 @@
   'use strict';
 
   function friendshipFactory($http){
-
     this.save = function(data){
       var url = '/api/v1/friendships.json';
       return $http({

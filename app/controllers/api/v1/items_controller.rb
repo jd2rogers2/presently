@@ -20,13 +20,14 @@ module Api
           @user = User.find_by(id: params[:plzrender])
           render json: @user
         else
-          render json: @list
+          render json: @item
         end
       end
 
       def show
         set_item
-        render json: @item.to_json(include: [:purchaser, list: {include: :user}])
+        render json: @item
+        # .to_json(include: [:purchaser, list: {include: :user}])
       end
 
       def index
@@ -47,7 +48,7 @@ module Api
       end
 
       def item_params
-        params.require(:items).permit(:id, :name, :url, :purchaser_id, :list_id, :notes, :price)
+        params.require(:items).permit(:id, :name, :url, :purchaser_id, :list_id, :notes, :price, :image)
       end
     end
   end
