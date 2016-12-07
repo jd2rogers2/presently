@@ -1,3 +1,5 @@
+use $http
+
 ----- current -----
 + how to push to heroku vid
 + can upload pics for items and users
