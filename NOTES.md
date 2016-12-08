@@ -1,10 +1,8 @@
-use $http
-
 ----- current -----
 
 
 ----- issues -----
-
+heroku not updating
 
 ----- potential features -----
 + items have rank (what you want most)
