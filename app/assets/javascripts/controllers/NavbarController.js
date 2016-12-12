@@ -24,6 +24,7 @@
 
     $scope.logout = function(){
       Auth.logout();
+      $scope.currentUser = {};
     }
   }
 

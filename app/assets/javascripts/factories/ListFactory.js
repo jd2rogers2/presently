@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function listFactory($http, $resource){
+  function listFactory($resource){
     return $resource('/api/v1/lists/:id.json', {id: '@id'}, {
       "update": {method: "PUT"}
     });
@@ -20,7 +20,8 @@
     // }
   }
 
-  listFactory.$inject = ['$http', '$resource']
+  listFactory.$inject = ['$resource']
+  // '$http'
 
   angular
     .module('app')
