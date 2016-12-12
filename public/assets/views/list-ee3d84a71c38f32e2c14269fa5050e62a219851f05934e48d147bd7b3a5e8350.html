@@ -1,0 +1,35 @@
+<div class="well">
+  <form ng-submit="createItem(new_item)">
+    <input type="text" value="name" ng-model="new_item.items.name" placeholder="name" />
+    <input type="number" value="0" ng-model="new_item.items.price" placeholder="price" />
+    <input type="text" value="notes" ng-model="new_item.items.notes" placeholder="notes" />
+    <input type="url" value="url" ng-model="new_item.items.url" placeholder="url" />
+    <input type="submit" value="add item" />
+  </form>
+</div>
+
+<div class="list well">
+  <h4>this is your wish list</h4>
+  <table class="table table-striped">
+    <tr>
+      <th></th>
+      <th>name</th>
+      <th>price</th>
+      <th>notes</th>
+      <th>external url</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <div class="infinite-scroll" infinite-scroll="loadMore()" infinite-scroll-disabled="disableInfinite" infinite-scroll-distance="0">
+      <tr ng-repeat="item in items | orderBy:'id' track by $index">
+        <td><img ng-src="{{item.image}}" class="mini-img img-rounded"></td>
+        <td ng-bind="item.name"></td>
+        <td>$<span ng-bind="item.price"></span></td>
+        <td ng-bind="item.notes"></td>
+        <td ng-bind="item.url"></td>
+        <td><a ui-sref="listItemEdit({list_id: list.id, item_id: item.id})">view/edit</a></td>
+        <td><a href="" ng-click="deleteItem(item)">delete</a></td>
+      </tr>
+    </div>
+  </table>
+</div>

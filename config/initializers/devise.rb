@@ -1,6 +1,11 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+
+  # below line added by jd per heroku support saying i should
+  # RAILS_ENV=production bundle exec rake assets:precompile
+  config.secret_key = '475366716205955e2d4cdc6fbd33c59e8e4ee0cbe2f351b9676522de087d2c16204422415f074855d41bdec97b305197562016c22837f2df59b9ed8da4c186d6'
+
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
