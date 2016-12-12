@@ -13,21 +13,21 @@
     $scope.createItem = function(input){
       input.plzrender = 'list';
       input.items.list_id = $scope.currentUser.list.id;
-      itemFactory.save(input).then(function(response){
-        $scope.list = response.data;
+      itemFactory.save(input).$promise.then(function(response){
+        $scope.list = response;
       });
     }
 
     $scope.deleteItem = function(item){
       item.plzrender = 'list';
-      itemFactory.delete(item).then(function(response){
-        $scope.list = response.data;
+      itemFactory.delete(item).$promise.then(function(response){
+        $scope.list = response;
       });
     }
 
     $scope.disableInfinite = false;
 
-    $scope.loadMore = function(){
+    $scope.loadMore = function(list){
       for (var i = 0; i < 10; i++) {
         $scope.items.push($scope.list.items[$scope.itemsCounter]);
         $scope.itemsCounter += 1;

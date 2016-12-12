@@ -20,9 +20,20 @@
       });
     }
 
+    this.update = function(data){
+      var url = '/api/v1/users/' + data.id + '.json';
+      return $http({
+        url: url,
+        method: 'PUT',
+        data: data
+        // {users: data} maybe?
+      });
+    }
+
     return {
       get: this.get,
-      query: this.query
+      query: this.query,
+      update: this.update
     }
   }
 
