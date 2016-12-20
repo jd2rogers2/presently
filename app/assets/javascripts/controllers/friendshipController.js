@@ -7,7 +7,9 @@
       $scope.currentUser = data;
     });
     $scope.viewUser = userFactory.get({id: $stateParams.id});
-    $scope.allUsers = userFactory.query();
+    userFactory.query().then(function(response){
+      $scope.allUsers = response.data;
+    })
     $scope.searchedUsers = [];
 
     $scope.userSearch = function(){
