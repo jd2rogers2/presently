@@ -14,13 +14,13 @@
 //= require angular
 //= require angular-devise
 //= require angular-messages
-//= require ngInfiniteScroll
 //= require angular-ui-router
 //= require angular-resource
 //= require bootstrap-sprockets
 //= require bootstrap
 //= require moment
-//= require ng-file-upload-shim
-//= require ng-file-upload
 //= require angular-rails-templates
+//= require ngInfiniteScroll
+//= require ng-file-upload
+//= require ng-file-upload-shim
 //= require_tree .

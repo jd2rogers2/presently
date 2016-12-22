@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: presently_development
-  socket: /var/pgsql_socket
+  # socket: /var/pgsql_socket
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: presently_production
-  username: presently
+  username: jrogers2
   password: <%= ENV['PRESENTLY_DATABASE_PASSWORD'] %>

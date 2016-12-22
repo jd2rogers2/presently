@@ -11,7 +11,7 @@ var purchaseComponent = {
   ].join('')
 }
 
-// purchaseComponent.$inject = ['$scope']
+purchaseComponent.$inject = ['$scope']
 
 angular
   .module('app')
