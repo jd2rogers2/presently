@@ -45,7 +45,7 @@
 
   }
 
-  eventController.$inject =['$scope', '$state', 'Auth', 'eventFactory']
+  eventController.$inject = ['$scope', '$state', 'Auth', 'eventFactory']
 
   angular
     .module('app')

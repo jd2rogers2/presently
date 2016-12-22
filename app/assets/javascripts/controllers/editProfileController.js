@@ -32,7 +32,7 @@
 
   }
 
-  editProfileController.$inject =['$scope', '$state', 'Auth', 'userFactory', 'Upload']
+  editProfileController.$inject = ['$scope', '$state', 'Auth', 'userFactory', 'Upload']
 
   angular
     .module('app')

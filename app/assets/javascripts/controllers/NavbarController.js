@@ -28,7 +28,7 @@
     }
   }
 
-  navbarController.$inject =['$scope', '$state', 'Auth']
+  navbarController.$inject = ['$scope', '$state', 'Auth']
 
   angular
     .module('app')
