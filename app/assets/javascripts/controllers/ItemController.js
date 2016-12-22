@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function itemController($scope, $state, $stateParams, itemFactory, Auth, Upload){
+  var itemController = ['$scope', '$state', '$stateParams', 'itemFactory', 'Auth', 'Upload', function($scope, $state, $stateParams, itemFactory, Auth, Upload){
     var itemCtrl = this;
     $scope.item = itemFactory.get({id: $stateParams.item_id}); 
 
@@ -27,9 +27,7 @@
         // fail
       });
     }
-  }
-
-  itemController.$inject = ['$scope', '$state', '$stateParams', 'itemFactory', 'Auth', 'Upload']
+  }];
 
   angular
     .module('app')

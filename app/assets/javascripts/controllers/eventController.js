@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function eventController($scope, $state, Auth, eventFactory){
+  var eventController = ['$scope', '$state', 'Auth', 'eventFactory', function($scope, $state, Auth, eventFactory){
     var eventCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
@@ -43,9 +43,7 @@
       }
     }
 
-  }
-
-  eventController.$inject = ['$scope', '$state', 'Auth', 'eventFactory']
+  }];
 
   angular
     .module('app')

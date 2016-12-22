@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function friendshipController($scope, $state, $stateParams, Auth, friendshipFactory, userFactory, $filter){
+  var friendshipController = ['$scope', '$state', '$stateParams', 'Auth', 'friendshipFactory', 'userFactory', '$filter', function($scope, $state, $stateParams, Auth, friendshipFactory, userFactory, $filter){
     var friendshipCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
@@ -33,9 +33,7 @@
         $scope.currentUser = response.data;
       });
     }
-  }
-
-  friendshipController.$inject = ['$scope', '$state', '$stateParams', 'Auth', 'friendshipFactory', 'userFactory', '$filter']
+  }];
 
   angular
     .module('app')

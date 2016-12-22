@@ -1,7 +1,7 @@
 (function(){
   'use strict';
 
-  function editProfileController($scope, $state, Auth, userFactory, Upload){
+  var editProfileController = ['$scope', '$state', 'Auth', 'userFactory', 'Upload', function($scope, $state, Auth, userFactory, Upload){
     var profEditCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
@@ -29,10 +29,7 @@
         // fail
       });
     }
-
-  }
-
-  editProfileController.$inject = ['$scope', '$state', 'Auth', 'userFactory', 'Upload']
+  }];
 
   angular
     .module('app')
