@@ -1,4 +1,5 @@
 (function(){
+
   'use strict';
 
   var eventController = ['$scope', '$state', 'Auth', 'eventFactory', function($scope, $state, Auth, eventFactory){
@@ -48,4 +49,5 @@
   angular
     .module('app')
     .controller('eventController', eventController)
+
 }())

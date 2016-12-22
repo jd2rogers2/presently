@@ -1,7 +1,8 @@
 (function(){
+  
   'use strict';
 
-  function purchaseController($scope, Auth, $state, itemFactory, userFactory){
+  var purchaseController = ['$scope', 'Auth', '$state', 'itemFactory', 'userFactory', function($scope, Auth, $state, itemFactory, userFactory){
     var userCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
@@ -14,9 +15,7 @@
         $scope.currentUser = response.data;
       });
     }
-  }
-
-  purchaseController.$inject = ['$scope', 'Auth', '$state', 'itemFactory', 'userFactory']
+  }];
 
   angular
     .module('app')

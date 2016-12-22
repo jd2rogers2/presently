@@ -2,7 +2,7 @@
 
   'use strict';
 
-  function loginController($scope, $state, Auth){
+  var loginController = ['$scope', '$state', 'Auth', function($scope, $state, Auth){
     var loginCtrl = this;
 
     $scope.login = function(){
@@ -20,9 +20,7 @@
         // error response message
       })
     }
-  }
-
-  loginController.$inject = ['$scope', '$state', 'Auth']
+  }];
 
   angular
     .module('app')

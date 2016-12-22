@@ -1,7 +1,8 @@
 (function(){
+  
   'use strict';
 
-  function listController($scope, Auth, $stateParams, itemFactory, listFactory){
+  var listController = ['$scope', 'Auth', '$stateParams', 'itemFactory', 'listFactory', function($scope, Auth, $stateParams, itemFactory, listFactory){
     var listCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
@@ -41,9 +42,7 @@
     $scope.list.$promise.then(function(response){
       $scope.loadMore();
     });
-  }
-
-  listController.$inject = ['$scope', 'Auth', '$stateParams', 'itemFactory', 'listFactory']
+  }];
 
   angular
     .module('app')

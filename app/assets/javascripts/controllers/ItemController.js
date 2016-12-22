@@ -1,4 +1,5 @@
 (function(){
+  
   'use strict';
 
   var itemController = ['$scope', '$state', '$stateParams', 'itemFactory', 'Auth', 'Upload', function($scope, $state, $stateParams, itemFactory, Auth, Upload){

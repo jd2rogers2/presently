@@ -1,4 +1,5 @@
 (function(){
+
   'use strict';
 
   var editProfileController = ['$scope', '$state', 'Auth', 'userFactory', 'Upload', function($scope, $state, Auth, userFactory, Upload){
@@ -34,4 +35,5 @@
   angular
     .module('app')
     .controller('editProfileController', editProfileController)
+
 }())

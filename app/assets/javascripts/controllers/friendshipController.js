@@ -1,4 +1,5 @@
 (function(){
+  
   'use strict';
 
   var friendshipController = ['$scope', '$state', '$stateParams', 'Auth', 'friendshipFactory', 'userFactory', '$filter', function($scope, $state, $stateParams, Auth, friendshipFactory, userFactory, $filter){

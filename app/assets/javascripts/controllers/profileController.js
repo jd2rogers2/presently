@@ -1,7 +1,8 @@
 (function(){
+  
   'use strict';
 
-  function profileController($scope, Auth, $state, $stateParams, itemFactory, userFactory, $filter, friendshipFactory){
+  var profileController = ['$scope', 'Auth', '$state', '$stateParams', 'itemFactory', 'userFactory', '$filter', 'friendshipFactory', function($scope, Auth, $state, $stateParams, itemFactory, userFactory, $filter, friendshipFactory){
     var userCtrl = this;
     Auth.currentUser().then(function(data){
       $scope.currentUser = data;
@@ -47,9 +48,7 @@
         $scope.viewUser = response.data;
       });
     }
-  }
-
-  profileController.$inject = ['$scope', 'Auth', '$state', '$stateParams', 'itemFactory', 'userFactory', '$filter', 'friendshipFactory']
+  }];
 
   angular
     .module('app')
