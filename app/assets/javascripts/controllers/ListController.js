@@ -29,18 +29,21 @@
     $scope.disableInfinite = false;
 
     $scope.loadMore = function(list){
-      for (var i = 0; i < 10; i++) {
-        $scope.items.push($scope.list.items[$scope.itemsCounter]);
-        $scope.itemsCounter += 1;
-        if ($scope.itemsCounter >= $scope.list.items.length) {
-          $scope.disableInfinite = true;
-          break;
+      if ($scope.list.$resolved) {
+        for (var i = 0; i < 10; i++) {
+          $scope.items.push($scope.list.items[$scope.itemsCounter]);
+          $scope.itemsCounter += 1;
+          if ($scope.itemsCounter >= $scope.list.items.length) {
+            $scope.disableInfinite = true;
+            break;
+          }
         }
       }
     }
 
     $scope.list.$promise.then(function(response){
       $scope.loadMore();
+      // put response in this loadmore?
     });
   }];
 
