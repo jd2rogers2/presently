@@ -17,7 +17,6 @@
 //= require angular-ui-router
 //= require angular-resource
 //= require bootstrap-sprockets
-//= require bootstrap
 //= require moment
 //= require angular-rails-templates
 //= require ngInfiniteScroll
