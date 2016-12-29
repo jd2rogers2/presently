@@ -11,8 +11,7 @@
     "angular-bootstrap": "latest",
     "bootstrap": "latest",
     "ng-file-upload": "latest",
-    "ng-file-upload-shim": "latest",
-    "angular-filter": "latest"
+    "ng-file-upload-shim": "latest"
   },
   "resolutions": {
     "angular": "v1.5.8"
