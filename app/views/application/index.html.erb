@@ -1,7 +1,14 @@
 <div class="header row">
   <div class="col col-md-12 well">
-    <h1>presently</h1>
-    <p>year round gift list</p>
+      <div ng-if="!currentUser" ng-controller="loginController as loginCtrl">
+        <img src="http://i.imgur.com/hjqDh9A.png" id="logo">
+        <form ng-submit="login()">
+          <input type="text" name="username" placeholder="username" ng-model="user.username" />
+          <input type="email" name="email" placeholder="email" ng-model="user.email" />
+          <input type="password" name="password" placeholder="password" ng-model="user.password" />
+          <input type="submit" value="log in" />
+        </form>
+      </div>
   </div>
 </div>
 
