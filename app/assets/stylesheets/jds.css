@@ -5,3 +5,22 @@
 .show-img {
   max-height: 200px;
 }
+
+.header .well, .footer .well {
+  background-color: #a7d8ff;
+}
+
+.footer {
+  min-height: 20px;
+  padding: 19px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  background-color: #a7d8ff;
+  text-align: center;
+}
+
+#sign-up input {
+  padding: 5px;
+  margin: 5px;
+}
