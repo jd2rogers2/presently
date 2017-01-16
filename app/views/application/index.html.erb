@@ -1,7 +1,7 @@
 <div class="header row">
   <div class="col col-md-12 well">
       <div ng-if="!currentUser" ng-controller="loginController as loginCtrl">
-        <img src="http://i.imgur.com/hjqDh9A.png" id="logo">
+        <h1 id="logo">Presently</h1>
         <form ng-submit="login()">
           <input type="text" name="username" placeholder="username" ng-model="user.username" />
           <input type="email" name="email" placeholder="email" ng-model="user.email" />

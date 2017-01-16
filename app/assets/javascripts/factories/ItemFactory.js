@@ -3,7 +3,7 @@
 
   function itemFactory($http){
     this.save = function(data){
-      var url = '/api/v1/items/.json';
+      var url = '/api/v1/items.json';
       return $http({
         url: url,
         method: 'POST',
