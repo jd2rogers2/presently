@@ -30,10 +30,22 @@
       });
     }
 
+    this.get = function(data){
+      var url = '/api/v1/items/' + data.id + '.json';
+      return $http({
+        url: url,
+        method: 'GET',
+        data: data
+        // 'remove: true,' to be put in data?
+      });
+    }
+
+
     return {
       save: this.save,
       update: this.update,
-      delete: this.delete
+      delete: this.delete,
+      get: this.get
     }
   }
 

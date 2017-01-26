@@ -4,7 +4,9 @@
 
   var itemController = ['$scope', '$state', '$stateParams', 'itemFactory', 'Auth', 'Upload', function($scope, $state, $stateParams, itemFactory, Auth, Upload){
     var itemCtrl = this;
-    $scope.item = itemFactory.get({id: $stateParams.item_id}); 
+    itemFactory.get({id: $stateParams.item_id}).then(function(response){
+      $scope.item = response.data;
+    });
 
     $scope.update = function(){
       var temp = {plzrender: 'item', items: $scope.item, id: $stateParams.item_id};
