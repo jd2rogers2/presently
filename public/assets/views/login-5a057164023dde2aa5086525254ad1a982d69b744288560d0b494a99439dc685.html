@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col col-md-6" id="sign-in">
+    <p>Hi there and welcome to Presently. I built this app as a final project for The Flatiron School and maintain it now as a portfolio app in hopes that you, a recruiter/hiring manager, will like it. For a look under the hood here's the github <a target="_blank" href="https://github.com/jd2rogers2/presently">https://github.com/jd2rogers2/presently</a>. </p>
+
+    <p>Also, please enjoy as a guest user via:</p>
+    <ul>
+      <li>username: show_user</li>
+      <li>email: show_user@email.com</li>
+      <li>password: show_user</li>
+    </ul>
+    <img src="http://i.imgur.com/K1rKwET.png" id="screenshot">
+  </div>
+
+  <div class="col col-md-6 well" id="sign-up">
+    <form ng-submit="register()" name="registerForm">
+      <h3>Create a new account!</h3>
+      <input type="text" name="username" placeholder="username" ng-model="new_user.username" required minlength="6" /><br>
+      <input type="email" name="email" placeholder="email" ng-model="new_user.email" required /><br>
+      <input type="password" name="password" placeholder="password" ng-model="new_user.password" required minlength="6" /><br>
+      <textarea rows="5" type="text" name="aboutme" placeholder="about me" ng-model="new_user.aboutme" required minlength="6" /><br>
+      <input type="date" name="bday" required ng-model="new_user.bday" required /><br>
+      <input type="submit" value="sign up">
+    </form>
+  </div>
+</div>
